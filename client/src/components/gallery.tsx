@@ -1,28 +1,29 @@
 export default function Gallery() {
   const images = [
     {
-      url: "https://images.unsplash.com/photo-1544919982-b61976f0ba43?auto=format&fit=crop&q=80",
-      title: "Shrine Interior",
+      url: "1.jpg",
+      title: "Maniyadichan Parai",
     },
     {
-      url: "https://images.unsplash.com/photo-1601142634808-38923eb7c560?auto=format&fit=crop&q=80",
-      title: "Prayer Hall",
+      url: "2.jpg",
+      title: "Church",
     },
     {
-      url: "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&q=80",
-      title: "Saint Statue",
+      url: "5.jpg",
+      title: "Church",
     },
     {
-      url: "https://images.unsplash.com/photo-1543349689-9a4d426bee8e?auto=format&fit=crop&q=80",
-      title: "Shrine Exterior",
+      url: "3.jpg",
+      title: "Church",
     },
     {
-      url: "https://images.unsplash.com/photo-1490604001847-b712b0c2f967?auto=format&fit=crop&q=80",
-      title: "Prayer Garden",
+      url: "4.jpg",
+      title: "Church",
     },
+
     {
-      url: "https://images.unsplash.com/photo-1577495508326-19a1b3cf65b7?auto=format&fit=crop&q=80",
-      title: "Evening Mass",
+      url: "6.jpg",
+      title: "Church",
     },
   ];
 
