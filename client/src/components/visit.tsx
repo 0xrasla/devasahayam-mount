@@ -1,64 +1,45 @@
-import { Calendar, Info, MapPin } from "lucide-react";
+import { openGoogleMap } from "@/lib/utils";
+import { Button } from "./ui/button";
 
 export default function Visit() {
   return (
-    <section id="visit" className="py-20 ">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 font-outfit">
-          Plan Your Visit
-        </h2>
-        <div className="grid md:grid-cols-2 gap-12">
-          <div className="space-y-6">
-            <div className="flex items-start space-x-4">
-              <MapPin className="h-6 w-6 text-red-700 mt-1" />
-              <div>
-                <h3 className="text-xl font-semibold mb-2">How to Reach</h3>
+    <section id="visit" className="pt-20">
+      <div className="bg-white py-16">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="relative h-[300px] rounded-2xl overflow-hidden mb-6 md:mb-0">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4817.531127843961!2d77.52254607579195!3d8.24015480083626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b04f4fcf3e739c9%3A0xc5b5099a4ba140a7!2sOur%20Lady%20of%20Sorrows%20Church!5e1!3m2!1sen!2sin!4v1735323814551!5m2!1sen!2sin"
+                width="600"
+                height="450"
+                style={{ border: 0 }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <div className="space-y-6">
+              <h3 className="text-xl mb-4 font-bold max-w-xl">
+                Devasahayammount, Aralvaimozhi, <br /> Kanyakumari District,{" "}
+                <br /> Tamil Nadu, India
+              </h3>
+
+              <div className="flex items-center md:items-start space-x-2">
                 <p className="text-gray-600">
-                  Kattadi Malai hill in Aralvaimozhi, Tamil Nadu, India
+                  The Devasahayam Mount Church is a Catholic church situated on
+                  Kattadimala hill, where Saint Devasahayam Pillai, a martyr and
+                  layman, was executed in 1752. The church is built on the spot
+                  where Devasahayam Pillai was martyred, making it a significant
+                  pilgrimage site for Christians.
                 </p>
               </div>
+              <Button
+                className="mt-6   text-center md:text-start"
+                onClick={() => openGoogleMap()}
+              >
+                Open Google Map
+              </Button>
             </div>
-            <div className="flex items-start space-x-4">
-              <Calendar className="h-6 w-6 text-red-700 mt-1" />
-              <div>
-                <h3 className="text-xl font-semibold mb-2">
-                  Best Time to Visit
-                </h3>
-                <p className="text-gray-600">
-                  The shrine is open year-round. Special celebrations during the
-                  feast day on January 14th.
-                </p>
-              </div>
-            </div>
-            <div className="flex items-start space-x-4">
-              <Info className="h-6 w-6 text-red-700 mt-1" />
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Facilities</h3>
-                <p className="text-gray-600">
-                  - Parking available
-                  <br />
-                  - Restrooms
-                  <br />
-                  - Prayer halls
-                  <br />
-                  - Meditation areas
-                  <br />- Shrine shop
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="bg-gray-50 p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold mb-4">
-              Guidelines for Visitors
-            </h3>
-            <ul className="space-y-3 text-gray-600">
-              <li>• Please maintain silence in prayer areas</li>
-              <li>• Dress modestly and appropriately</li>
-              <li>• Photography is restricted in certain areas</li>
-              <li>• Follow COVID-19 safety protocols</li>
-              <li>• Respect the sacred spaces and other visitors</li>
-              <li>• Large groups should inform in advance</li>
-            </ul>
           </div>
         </div>
       </div>

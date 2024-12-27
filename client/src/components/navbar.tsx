@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
@@ -6,6 +7,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { useNavigate } from "@tanstack/react-router";
 import { Menu } from "lucide-react";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
@@ -13,6 +15,8 @@ import { useEffect, useState } from "react";
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,20 +41,24 @@ export default function Navbar() {
   return (
     <motion.nav
       className={`fixed w-full z-50 transition-all duration-300 font-outfit ${
-        isScrolled ? "bg-green-100 py-4 shadow-md" : "bg-transparent py-6"
+        isScrolled ? "bg-[#c5cfc5] py-4 shadow-md" : "bg-transparent py-6"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <div className="flex items-center space-x-3">
-            <span
-              className={`text-lg font-semibold transition-colors duration-300 ${
-                isScrolled ? "text-shrine-800" : "text-shrine-700"
-              }`}
-            >
-              Our Lady of Sorrows Church
-            </span>
-          </div>
+          <span
+            className={`text-lg font-semibold transition-colors cursor-pointer duration-300 ${
+              isScrolled ? "text-shrine-800" : "text-shrine-700"
+            }`}
+            onClick={() => {
+              navigate({
+                to: "/",
+              });
+            }}
+          >
+            Our Lady of Sorrows Church
+          </span>
+
           <div className="hidden md:flex space-x-8 text-sm font-bold uppercase">
             {["Home", "About", "Saint", "Gallery", "Visit"].map((item) => (
               <button
@@ -65,6 +73,21 @@ export default function Navbar() {
                 {item}
               </button>
             ))}
+          </div>
+
+          <div className="hidden md:flex space-x-4">
+            <Button
+              type="button"
+              className="border-2 border-black p-4 rounded-lg bg-transparent text-black hover:bg-transparent w-full"
+            >
+              Contact
+            </Button>
+            <Button
+              type="button"
+              className="border-2 border-black p-4 rounded-lg"
+            >
+              Donate
+            </Button>
           </div>
 
           <div className="md:hidden">
@@ -91,8 +114,14 @@ export default function Navbar() {
                       >
                         {item}
                       </button>
-                    ),
+                    )
                   )}
+                  <Button className="uppercase bg-transparent mt-4 w-full text-start text-black border-2 border-black hover:bg-transparent">
+                    Contact
+                  </Button>
+                  <Button className="uppercase w-full text-start">
+                    Donate
+                  </Button>
                 </div>
               </SheetContent>
             </Sheet>
