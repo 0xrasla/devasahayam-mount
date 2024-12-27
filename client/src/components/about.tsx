@@ -59,8 +59,8 @@ export default function About() {
                 key={index}
                 title={spotlight.title}
                 className="flex flex-col justify-between h-[250px] hover:bg-gray-100 transition-all duration-300 ease-in-out cards"
-                gradientColor="#fff"
-                gradientSize={250}
+                gradientColor="#f0f0f0"
+                gradientSize={50}
               >
                 <div className="p-6 h-full text-center">
                   <h1 className="text-2xl font-bold text-gray-900 font-outfit mb-2">
