@@ -1,5 +1,9 @@
-import HeroSection from "@/components/hero";
-import Navbar from "@/components/topbar";
+import About from "@/components/about";
+import Gallery from "@/components/gallery";
+import Hero from "@/components/hero";
+import Navbar from "@/components/navbar";
+import Saint from "@/components/saint";
+import Visit from "@/components/visit";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
@@ -8,11 +12,15 @@ export const Route = createFileRoute("/")({
 
 function HomeComponent() {
   return (
-    <div className="min-h-screen w-[80%] mx-auto">
-      <header className="">
+    <div>
+      <div className="min-h-screen">
         <Navbar />
-      </header>
-      <HeroSection />
+        <Hero />
+        <About />
+        <Saint />
+        <Gallery />
+        <Visit />
+      </div>
     </div>
   );
 }
