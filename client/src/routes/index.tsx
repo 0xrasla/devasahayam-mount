@@ -3,6 +3,7 @@ import Gallery from "@/components/gallery";
 import HeroDesignNew from "@/components/herodesign-new";
 import SaintNewDesign from "@/components/saintdesign-new";
 import Footer from "@/components/ui/footer/footer";
+import Visit from "@/components/visit";
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 
@@ -43,6 +44,7 @@ function HomeComponent() {
       <About />
       <Gallery />
       <SaintNewDesign />
+      <Visit />
       <Footer />
     </div>
   );

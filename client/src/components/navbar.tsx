@@ -32,7 +32,7 @@ export default function Navbar() {
     if (element) {
       element.scrollIntoView({
         behavior: "smooth",
-        block: "start",
+        block: "center",
       });
     }
   };
@@ -98,9 +98,7 @@ export default function Navbar() {
               </SheetTrigger>
               <SheetContent side="right">
                 <SheetHeader>
-                  <SheetTitle className="text-start">
-                    Devasahayam Mount
-                  </SheetTitle>
+                  <SheetTitle className="text-start"></SheetTitle>
                   <SheetDescription></SheetDescription>
                 </SheetHeader>
                 <div className="flex flex-col justify-start space-y-4 mt-4 text-lg uppercase font-medium items-start">
@@ -109,16 +107,16 @@ export default function Navbar() {
                       <button
                         key={item}
                         onClick={() => handleSmoothScroll(item.toLowerCase())}
-                        className="text-shrine-700 hover:text-shrine-900"
+                        className="text-shrine-700 hover:text-shrine-900 text-[16px] font-bold"
                       >
                         {item}
                       </button>
                     ),
                   )}
-                  <Button className="uppercase bg-transparent mt-4 w-full text-start text-black border-2 border-black hover:bg-transparent">
+                  <Button className="capitalize mt-4 bg-transparent hover:bg-transparent w-full text-start text-accent border-[1px] border-accent">
                     Contact
                   </Button>
-                  <Button className="uppercase w-full text-start">
+                  <Button className="capitalize w-full text-start bg-accent hover:bg-accent">
                     Donate
                   </Button>
                 </div>

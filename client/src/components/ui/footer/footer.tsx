@@ -24,17 +24,21 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center">
                 <Phone size={20} className="mr-2" />
-                <span>+91 123 456 7890</span>
+                <span>
+                  <a href="tel:+918903760869">+91 89037 60869</a>
+                </span>
               </div>
               <div className="flex items-center">
                 <Mail size={20} className="mr-2" />
-                <span>contact@rcchurch.com</span>
+                <span>
+                  <a href="mailto:devasahayammount.web@gmail.com">
+                    devasahayammount.web@gmail.com
+                  </a>
+                </span>
               </div>
               <div className="flex items-start">
                 <MapPin size={20} className="mr-2 mt-1" />
-                <span>
-                  123 Church Street, Devesahayamount, Tamil Nadu, India
-                </span>
+                <span>Devesahayamount, Tamil Nadu, India</span>
               </div>
             </div>
           </div>
@@ -60,14 +64,41 @@ export default function Footer() {
               Stay Connected
             </h3>
             <div className="flex space-x-4 mb-6">
-              <img src="/assets/facebook.svg" alt="" />
-              <img src="/assets/instagram.svg" alt="" />
-              <img src="/assets/youtube.svg" alt="" />
+              <img
+                src="/assets/facebook.svg"
+                alt=""
+                onClick={() => {
+                  window.open(
+                    "https://www.facebook.com/Devasahayammountshrine",
+                    "_blank",
+                  );
+                }}
+              />
+              <img
+                src="/assets/instagram.svg"
+                alt=""
+                onClick={() => {
+                  window.open(
+                    "https://www.instagram.com/devasahayammountshrine?igsh=MXJ1d3N5aXlxcHVuMw==",
+                    "_blank",
+                  );
+                }}
+              />
+              <img
+                src="/assets/youtube.svg"
+                alt=""
+                onClick={() => {
+                  window.open(
+                    "https://youtube.com/@devasahayammountshrine5677?si=VMI5LnpVg0_qa_Ud",
+                    "_blank",
+                  );
+                }}
+              />
             </div>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-gray-800 text-center">
+        <div className="mt-12 pt-8 border-t border-white text-center">
           <p>
             &copy; {new Date().getFullYear()} RC Church - Devesahayamount. All
             rights reserved.

@@ -2,7 +2,6 @@ import { cn } from "@/lib/utils";
 import { useNavigate } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { GridPattern } from "./ui/box-baground";
-import { Button } from "./ui/button";
 
 export default function Saint() {
   const navigate = useNavigate();
@@ -16,7 +15,7 @@ export default function Saint() {
         y={-1}
         className={cn(
           "[mask-image:radial-gradient(700px_circle_at_center,white,transparent)]",
-          "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12"
+          "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12",
         )}
       />
 
@@ -81,7 +80,8 @@ export default function Saint() {
               </p>
             </div>
 
-            <Button
+            <button
+              className="mb-8 text-white font-bold mt-2 p-3 text-center md:text-start bg-accent text-[16px] rounded-lg"
               onClick={() =>
                 navigate({
                   to: "/history",
@@ -89,7 +89,7 @@ export default function Saint() {
               }
             >
               Read More
-            </Button>
+            </button>
           </motion.div>
 
           <div

@@ -1,6 +1,5 @@
 import { motion } from "motion/react";
 import { useRef, useState } from "react";
-import { Button } from "./ui/button";
 
 export default function HeroDesignNew() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -26,9 +25,9 @@ export default function HeroDesignNew() {
                 </h2>
                 <h4 className="font-semibold text-white">Devasahayam Mount </h4>
 
-                <Button className="bg-accent font-semibold mt-4 text-sm">
+                <button className="mb-8 text-white font-normal w-[132px] mt-2 p-3 text-center md:text-start bg-accent text-[16px] rounded-lg">
                   Plan to visit
-                </Button>
+                </button>
               </div>
             </div>
           </div>

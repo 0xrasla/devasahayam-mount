@@ -1,57 +1,58 @@
-import { Clock10, Landmark, MapIcon } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
-import { Button } from "./ui/button";
-
-const spotlightData = [
-  {
-    title: "Mass Timings",
-    description:
-      "Join us for daily and special Masses at the shrine. Our Masses are held at various times to accommodate all visitors.",
-    icon: <Clock10 className="text-4xl text-shrine-700" />,
-  },
-  {
-    title: "Sacred Places",
-    description:
-      "Discover the sacred spots at the shrine. These places are filled with prayer and reflection, perfect for those seeking solace.",
-    icon: <Landmark className="text-4xl text-shrine-700" />,
-  },
-  {
-    title: "Location & Address",
-    description:
-      "Find us at Devasahayam Mount, Tamil Nadu. We're easy to reach, and our shrine welcomes visitors from all over the world.",
-    icon: <MapIcon className="text-4xl text-shrine-700" />,
-  },
-];
+import { Clock10, Landmark } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "./ui/accordion";
 
 export default function About() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [videoPlaying, setVideoPlaying] = useState(false);
+  const schedules = [
+    {
+      day: "Sunday",
+      masses: [
+        {
+          time: "7:00 AM",
+          type: "Start your day with prayer and reflection.",
+        },
+        { time: "9:00 AM", type: "A celebration for all ages." },
+        { time: "11:00 AM", type: "A solemn and uplifting service." },
+        {
+          time: "6:00 PM",
+          type: "A peaceful conclusion to the day.",
+        },
+      ],
+    },
+    {
+      day: "Weekdays (Monday - Saturday)",
+      masses: [
+        {
+          time: "6:30 AM",
+          type: "Begin your day with God's blessings.",
+        },
+        { time: "7:00 PM", type: "A moment of quiet devotion." },
+      ],
+    },
+    {
+      day: "First Friday",
+      masses: [
+        {
+          time: "6:30 AM",
+          type: "Honor the Sacred Heart of Jesus.",
+        },
+        {
+          time: "7:00 PM",
+          type: "A special devotion to the Sacred Heart.",
+        },
+      ],
+    },
+  ];
 
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.pause();
-    }
-  }, []);
-
-  const handleVideoPlayPause = () => {
-    if (videoRef.current) {
-      if (videoPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setVideoPlaying(!videoPlaying);
-    }
-  };
   return (
-    <section
-      id="about"
-      className="relative bg-gradient-to-b from-gray-100 to-white"
-    >
+    <section id="about" className="relative to-white">
       <div className="relative w-full mt-8 flex justify-center">
         <div className="relative w-full max-w-3xl">
           <video
-            ref={videoRef}
             className="w-full sm:w-[90%] h-[400px] sm:h-[300px] object-cover mx-auto"
             src="/hero.mp4"
             autoPlay
@@ -59,12 +60,6 @@ export default function About() {
             muted
             playsInline
           />
-          <div
-            className="absolute inset-0 flex justify-center items-center cursor-pointer"
-            onClick={handleVideoPlayPause}
-          >
-            {!videoPlaying && <img src="/assets/play.svg" color="white" />}
-          </div>
         </div>
       </div>
 
@@ -76,38 +71,73 @@ export default function About() {
           A place of peace, reflection, and devotion.
         </p>
 
-        {spotlightData.map((spotlight, index) => (
-          <div className="space-y-12 animate-slide-up" key={index}>
-            <div className="space-y-4 p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out">
-              <div className="flex gap-2">
-                <div className="font-normal">{spotlight.icon}</div>
-                <h3 className="text-[18px] font-semibold text-gray-900">
-                  {spotlight.title}
-                </h3>
-              </div>
-              <p className="text-gray-600 leading-relaxed text-[16px]">
-                {spotlight.description}
+        <Accordion type="multiple" className="pt-6">
+          <AccordionItem value="mass-timings" className="shadow-md p-1">
+            <AccordionTrigger className="text-[18px] font-bold">
+              <div>
+                <Clock10 />
+              </div>{" "}
+              Mass Timings
+            </AccordionTrigger>
+            <AccordionContent>
+              <p className="text-[16px] px-6 py-2">
+                Join us for daily and special Masses at the shrine. Our Masses
+                are held at various timings to accommodate all visitors.
               </p>
-              <Button
-                onClick={() => {
-                  if (index === 0) {
-                    let ele = document.getElementById("mass");
+              <div className="px-12">
+                {schedules.map((schedule, index) => {
+                  const isLast = index === schedules.length - 1;
 
-                    if (ele) {
-                      ele.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start",
-                      });
-                    }
-                  }
-                }}
-                className="mt-6 bg-accent text-[16px]"
-              >
+                  return (
+                    <div
+                      key={schedule.day}
+                      className={`py-4 flex flex-col ${
+                        !isLast ? "border-b-[1px] border-gray-400" : ""
+                      }`}
+                    >
+                      <h4 className="p-0 pb-2 font-bold text-[16px]">
+                        {schedule.day}
+                      </h4>
+
+                      <div className="flex flex-col gap-2">
+                        {schedule.masses.map((mass, massIndex) => {
+                          return (
+                            <div key={massIndex}>
+                              <p className="pb-1">{mass.type}</p>
+                              <p className="font-bold text-black">
+                                {mass.time}
+                              </p>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                })}
+
+                <p className="text-accent font-bold text-[16px] mt-4">
+                  Learn More
+                </p>
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="sacred-places" className="shadow-md p-1">
+            <AccordionTrigger className="text-[18px] font-bold">
+              <div className="">
+                <Landmark />
+              </div>
+              Sacred Places
+            </AccordionTrigger>
+            <AccordionContent className="px-6 font-[16px]">
+              Discover the sacred spots at the shrine. These places are filled
+              with prayer and reflection, perfect for those seeking solace.
+              <p className="text-accent font-bold text-[16px] mt-4">
                 Learn More
-              </Button>
-            </div>
-          </div>
-        ))}
+              </p>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
       </div>
     </section>
   );

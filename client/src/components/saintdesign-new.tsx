@@ -1,6 +1,5 @@
 import { useNavigate } from "@tanstack/react-router";
 import { motion } from "motion/react";
-import { Button } from "./ui/button";
 
 export default function SaintNewDesign() {
   const navigate = useNavigate();
@@ -38,7 +37,9 @@ export default function SaintNewDesign() {
             prominent pilgrimage center.
           </p>
 
-          <Button className="mt-4 bg-accent">Read More</Button>
+          <button className="mb-8 text-white font-bold mt-2 p-3 text-center md:text-start bg-accent text-[16px] rounded-lg">
+            Read More
+          </button>
         </div>
       </div>
     </motion.section>
