@@ -54,7 +54,8 @@ export default {
           4: "hsl(var(--chart-4))",
           5: "hsl(var(--chart-5))",
         },
-        maincol: "#ccd5cc",
+        maincol: "#466527",
+        accent: "#466527",
       },
       keyframes: {
         "accordion-down": {

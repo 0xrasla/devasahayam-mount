@@ -8,7 +8,6 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { useNavigate } from "@tanstack/react-router";
-import { Menu } from "lucide-react";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 
@@ -41,13 +40,13 @@ export default function Navbar() {
   return (
     <motion.nav
       className={`fixed w-full z-50 transition-all duration-300 font-outfit ${
-        isScrolled ? "bg-[#c5cfc5] py-4 shadow-md" : "bg-transparent py-6"
+        isScrolled ? "bg-white shadow-md py-6" : "bg-white py-6"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <span
-            className={`text-lg font-semibold transition-colors cursor-pointer duration-300 ${
+            className={`text-[16px] font-semibold transition-colors cursor-pointer duration-300 ${
               isScrolled ? "text-shrine-800" : "text-shrine-700"
             }`}
             onClick={() => {
@@ -94,7 +93,7 @@ export default function Navbar() {
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
                 <button className="text-shrine-700 focus:outline-none">
-                  <Menu size={24} />
+                  <img src="/assets/hamburger-menu.svg" />
                 </button>
               </SheetTrigger>
               <SheetContent side="right">
@@ -114,7 +113,7 @@ export default function Navbar() {
                       >
                         {item}
                       </button>
-                    )
+                    ),
                   )}
                   <Button className="uppercase bg-transparent mt-4 w-full text-start text-black border-2 border-black hover:bg-transparent">
                     Contact

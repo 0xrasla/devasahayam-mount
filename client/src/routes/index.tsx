@@ -1,6 +1,6 @@
 import About from "@/components/about";
 import Gallery from "@/components/gallery";
-import Hero from "@/components/hero";
+import HeroDesignNew from "@/components/herodesign-new";
 import MassSchedules from "@/components/mass";
 import Saint from "@/components/saint";
 import Footer from "@/components/ui/footer/footer";
@@ -14,7 +14,7 @@ export const Route = createFileRoute("/")({
 function HomeComponent() {
   return (
     <div className="min-h-screen">
-      <Hero />
+      <HeroDesignNew />
       <About />
       <MassSchedules />
       <Saint />
