@@ -8,15 +8,8 @@ export default function HeroDesignNew() {
 
   return (
     <motion.section
-      className="relative overflow-hidden pt-16 min-h-screen"
+      className="relative overflow-hidden pt-16 min-h-full"
       id="home"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{
-        delay: 0.3,
-        duration: 0.5,
-      }}
     >
       <div className="w-full h-full">
         <div className="container flex flex-col text-center relative">
@@ -31,16 +24,16 @@ export default function HeroDesignNew() {
                 <h2 className="text-xl font-semibold text-white">
                   Our Lady of Sorrows Church
                 </h2>
-                <h4>Devasahayam Mount </h4>
+                <h4 className="font-semibold text-white">Devasahayam Mount </h4>
 
-                <Button className="bg-accent font-semibold mt-4">
+                <Button className="bg-accent font-semibold mt-4 text-sm">
                   Plan to visit
                 </Button>
               </div>
             </div>
           </div>
         </div>
-        <p className="text-sm">
+        <p className="text-sm p-4 leading-normal font-medium">
           Devasahayam Mount in Tamil Nadu is a sacred site where St.
           Devasahayam, India’s first lay saint, was martyred in 1752. It is home
           to the Our Lady of Sorrows Church, which also serves as a prominent

@@ -1,6 +1,5 @@
 import { openGoogleMap } from "@/lib/utils";
 import { Play } from "lucide-react";
-import { motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "./ui/button";
 
@@ -26,16 +25,9 @@ export default function Hero() {
   };
 
   return (
-    <motion.section
+    <section
       className="relative overflow-hidden pt-32 pb-6 min-h-screen"
       id="home"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{
-        delay: 0.3,
-        duration: 0.5,
-      }}
     >
       <div className="w-full h-full">
         <div className="container flex flex-col items-center px-4 text-center py-16 mx-auto lg:pb-56 md:py-32 md:px-10 lg:px-32 lg:text-left dark:text-gray-50">
@@ -78,6 +70,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }
