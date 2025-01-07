@@ -5,6 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "./ui/accordion";
+import { Button } from "./ui/button";
 
 export default function About() {
   const schedules = [
@@ -78,70 +79,86 @@ export default function About() {
           A place of peace, reflection, and devotion.
         </p>
 
-        <Accordion type="multiple" className="pt-6">
+        <Accordion
+          type="multiple"
+          className="pt-6"
+          defaultValue={["mass-timings", "sacred-places"]}
+        >
           <AccordionItem value="mass-timings" className="shadow-md p-1">
-            <AccordionTrigger className="text-[18px] font-bold">
+            <AccordionTrigger className="text-[18px] md:text-[24px] font-bold text-maincol">
               <div>
                 <Clock10 />
               </div>{" "}
               Mass Timings
             </AccordionTrigger>
             <AccordionContent>
-              <p className="text-[16px] px-6 py-2">
+              <p className="text-[16px] md:text-[18px] px-6 py-2">
                 Join us for daily and special Masses at the shrine. Our Masses
                 are held at various timings to accommodate all visitors.
               </p>
-              <div className="px-12">
+              <div className="px-12 md:grid md:grid-cols-2 md:grid-rows-2 md:gap-4 h-full py-4">
                 {schedules.map((schedule, index) => {
                   const isLast = index === schedules.length - 1;
 
                   return (
                     <div
                       key={schedule.day}
-                      className={`py-4 flex flex-col ${
-                        !isLast ? "border-b-[1px] border-gray-400" : ""
+                      className={`flex flex-col md:gap-6 md:shadow-sm h-full py-4 ${
+                        !isLast
+                          ? "border-b-[1px] border-gray-400 md:border-none"
+                          : ""
+                      } ${
+                        index === 0
+                          ? "md:row-span-2 h-full"
+                          : "md:row-span-1 h-full"
                       }`}
                     >
-                      <h4 className="p-0 pb-2 font-bold text-[16px]">
-                        {schedule.day}
-                      </h4>
-
-                      <div className="flex flex-col gap-2">
-                        {schedule.masses.map((mass, massIndex) => {
-                          return (
+                      <div className="md:p-2 flex flex-col justify-between md:justify-start h-full">
+                        <h4 className="p-0 pb-2 font-bold text-[16px] md:text-[20px] text-black">
+                          {schedule.day}
+                        </h4>
+                        <div className="flex flex-col gap-2">
+                          {schedule.masses.map((mass, massIndex) => (
                             <div key={massIndex}>
-                              <p className="pb-1">{mass.type}</p>
-                              <p className="font-bold text-black">
+                              <p className="pb-1 md:text-[18px]">{mass.type}</p>
+                              <p className="font-bold text-black md:text-[18px]">
                                 {mass.time}
                               </p>
                             </div>
-                          );
-                        })}
+                          ))}
+                        </div>
                       </div>
                     </div>
                   );
                 })}
-
-                <p className="text-accent font-bold text-[16px] mt-4">
-                  Learn More
-                </p>
               </div>
+
+              <p className="text-accent font-bold text-[16px] mt-4 md:hidden px-6">
+                Learn More
+              </p>
+
+              <Button className="capitalize mx-6 hidden md:block text-start h-[42px] w-[116px] bg-accent hover:bg-accent text-[16px] rounded-lg">
+                Learn More
+              </Button>
             </AccordionContent>
           </AccordionItem>
 
           <AccordionItem value="sacred-places" className="shadow-md p-1">
-            <AccordionTrigger className="text-[18px] font-bold">
+            <AccordionTrigger className="text-[18px] md:text-[24px] font-bold text-maincol">
               <div className="">
                 <Landmark />
               </div>
               Sacred Places
             </AccordionTrigger>
-            <AccordionContent className="px-6 font-[16px]">
+            <AccordionContent className="px-6 text-[16px] md:text-[18px] py-2">
               Discover the sacred spots at the shrine. These places are filled
               with prayer and reflection, perfect for those seeking solace.
-              <p className="text-accent font-bold text-[16px] mt-4">
+              <p className="text-accent font-bold text-[16px] mt-4 md:hidden px-6">
                 Learn More
               </p>
+              <Button className="capitalize my-6 hidden md:block text-start h-[42px] w-[116px] bg-accent hover:bg-accent text-[16px] rounded-lg">
+                Learn More
+              </Button>
             </AccordionContent>
           </AccordionItem>
         </Accordion>
