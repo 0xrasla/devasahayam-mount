@@ -103,7 +103,7 @@ export default function About() {
                   return (
                     <div
                       key={schedule.day}
-                      className={`flex flex-col md:gap-6 md:shadow-sm h-full py-4 ${
+                      className={`flex flex-col md:gap-6 md:shadow-lg h-full py-4 ${
                         !isLast
                           ? "border-b-[1px] border-gray-400 md:border-none"
                           : ""
@@ -113,11 +113,11 @@ export default function About() {
                           : "md:row-span-1 h-full"
                       }`}
                     >
-                      <div className="md:p-2 flex flex-col justify-between md:justify-start h-full">
+                      <div className="md:p-2 flex flex-col gap-4 justify-between md:justify-start h-full">
                         <h4 className="p-0 pb-2 font-bold text-[16px] md:text-[20px] text-black">
                           {schedule.day}
                         </h4>
-                        <div className="flex flex-col gap-2">
+                        <div className="flex flex-col gap-2 md:gap-6">
                           {schedule.masses.map((mass, massIndex) => (
                             <div key={massIndex}>
                               <p className="pb-1 md:text-[18px]">{mass.type}</p>
@@ -153,7 +153,7 @@ export default function About() {
             <AccordionContent className="px-6 text-[16px] md:text-[18px] py-2">
               Discover the sacred spots at the shrine. These places are filled
               with prayer and reflection, perfect for those seeking solace.
-              <p className="text-accent font-bold text-[16px] mt-4 md:hidden px-6">
+              <p className="text-accent font-bold text-[16px] mt-4 md:hidden">
                 Learn More
               </p>
               <Button className="capitalize my-6 hidden md:block text-start h-[42px] w-[116px] bg-accent hover:bg-accent text-[16px] rounded-lg">

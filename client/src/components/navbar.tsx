@@ -59,7 +59,7 @@ export default function Navbar() {
           </span>
 
           <div className="hidden md:flex space-x-8 text-[18px] font-bold uppercase font-avenir">
-            {["Home", "About", "Saint", "Gallery", "Visit"].map((item) => (
+            {["Home", "About"].map((item) => (
               <button
                 key={item}
                 onClick={() => handleSmoothScroll(item.toLowerCase())}
@@ -72,6 +72,22 @@ export default function Navbar() {
                 {item}
               </button>
             ))}
+            <button
+              key={"fathers"}
+              onClick={() => {
+                navigate({
+                  to: "/fathers",
+                });
+              }}
+              className={`transition-colors duration-300 ${
+                isScrolled
+                  ? "text-shrine-700 hover:text-shrine-900"
+                  : "text-shrine-600 hover:text-shrine-800"
+              }`}
+            >
+              Fathers
+            </button>
+
             <button
               key={"massbooking"}
               onClick={() => {
@@ -90,7 +106,7 @@ export default function Navbar() {
             </button>
           </div>
 
-          <div className="gap-4 font-avenir hidden md:flex space-x-4">
+          <div className="gap-2 font-avenir hidden md:flex space-x-4">
             <Button className="capitalize bg-transparent h-[42px] w-[116px] hover:bg-transparent rounded-lg text-start text-accent border-[1px] border-accent text-[16px]">
               Contact
             </Button>
@@ -112,17 +128,41 @@ export default function Navbar() {
                   <SheetDescription></SheetDescription>
                 </SheetHeader>
                 <div className="flex flex-col justify-start space-y-4 mt-4 text-lg uppercase font-medium items-start">
-                  {["Home", "About", "Saint", "Gallery", "Visit"].map(
-                    (item) => (
-                      <button
-                        key={item}
-                        onClick={() => handleSmoothScroll(item.toLowerCase())}
-                        className="text-shrine-700 hover:text-shrine-900 text-[16px] font-bold"
-                      >
-                        {item}
-                      </button>
-                    )
-                  )}
+                  {["Home", "About"].map((item) => (
+                    <button
+                      key={item}
+                      onClick={() => handleSmoothScroll(item.toLowerCase())}
+                      className="text-shrine-700 hover:text-shrine-900 text-[16px] font-bold"
+                    >
+                      {item}
+                    </button>
+                  ))}
+
+                  <button
+                    key={"fathers"}
+                    onClick={() => {
+                      navigate({
+                        to: "/fathers",
+                      });
+                    }}
+                    className="text-shrine-700 hover:text-shrine-900 text-[16px] font-bold"
+                  >
+                    Fathers
+                  </button>
+
+                  <button
+                    key={"massbooking"}
+                    onClick={() => {
+                      window.open(
+                        "https://docs.google.com/forms/d/e/1FAIpQLSeZYID_bglTxsK9dNH3_RTGnmTOJbGRaTd8wahKa-g4gham5g/viewform?usp=dialog",
+                        "_blank"
+                      );
+                    }}
+                    className="text-shrine-700 hover:text-shrine-900 text-[16px] font-bold"
+                  >
+                    Mass Booking
+                  </button>
+
                   <Button className="capitalize mt-4 bg-transparent hover:bg-transparent w-full text-start text-accent border-[1px] border-accent">
                     Contact
                   </Button>
