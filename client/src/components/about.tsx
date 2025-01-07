@@ -49,11 +49,18 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="relative to-white">
-      <div className="relative w-full mt-8 flex justify-center">
-        <div className="relative w-full max-w-3xl">
+    <section id="about" className="relative to-white w-screen">
+      <div className="relative w-full my-6 flex justify-center">
+        <div className="relative w-full">
+          <h2 className="py-2 md:text-[26px] md:text-maincol md:w-[87%] md:mx-auto">
+            Devasahayam Mount in Tamil Nadu is a sacred site where St.
+            Devasahayam, India’s first lay saint, was martyred in 1752. <br />{" "}
+            It is home to the Our Lady of Sorrows Church, which also serves as a
+            prominent pilgrimage center.
+          </h2>
+
           <video
-            className="w-full sm:w-[90%] h-[400px] sm:h-[300px] object-cover mx-auto"
+            className="w-full sm:w-[90%] h-[400px] sm:h-[300px] object-cover mx-auto md:hidden"
             src="/hero.mp4"
             autoPlay
             loop
@@ -63,11 +70,11 @@ export default function About() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <h2 className="text-[26px] font-bold text-gray-900 p-[0]">
+      <div className="max-w-7xl md:w-full md:mx-0 mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <h2 className="text-[26px] font-bold text-gray-900 p-[0] md:text-maincol md:text-[30px]">
           About Our Shrine
         </h2>
-        <p className="text-sm text-black">
+        <p className="text-sm text-black md:text-[18px] font-avenir">
           A place of peace, reflection, and devotion.
         </p>
 

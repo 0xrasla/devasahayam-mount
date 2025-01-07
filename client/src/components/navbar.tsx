@@ -46,7 +46,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <span
-            className={`text-[16px] font-semibold transition-colors cursor-pointer duration-300 ${
+            className={`text-[16px] font-semibold transition-colors font-avenir cursor-pointer duration-300 ${
               isScrolled ? "text-shrine-800" : "text-shrine-700"
             }`}
             onClick={() => {
@@ -58,12 +58,12 @@ export default function Navbar() {
             Our Lady of Sorrows Church
           </span>
 
-          <div className="hidden md:flex space-x-8 text-sm font-bold uppercase">
+          <div className="hidden md:flex space-x-8 text-[18px] font-bold uppercase font-avenir">
             {["Home", "About", "Saint", "Gallery", "Visit"].map((item) => (
               <button
                 key={item}
                 onClick={() => handleSmoothScroll(item.toLowerCase())}
-                className={`font-medium transition-colors duration-300 ${
+                className={`transition-colors duration-300 ${
                   isScrolled
                     ? "text-shrine-700 hover:text-shrine-900"
                     : "text-shrine-600 hover:text-shrine-800"
@@ -74,17 +74,11 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="hidden md:flex space-x-4">
-            <Button
-              type="button"
-              className="border-2 border-black p-4 rounded-lg bg-transparent text-black hover:bg-transparent w-full"
-            >
+          <div className="gap-4 font-avenir hidden md:flex space-x-4">
+            <Button className="capitalize bg-transparent h-[42px] w-[116px] hover:bg-transparent rounded-lg text-start text-accent border-[1px] border-accent text-[16px]">
               Contact
             </Button>
-            <Button
-              type="button"
-              className="border-2 border-black p-4 rounded-lg"
-            >
+            <Button className="capitalize text-start h-[42px] w-[116px] bg-accent hover:bg-accent text-[16px] rounded-lg">
               Donate
             </Button>
           </div>
@@ -111,7 +105,7 @@ export default function Navbar() {
                       >
                         {item}
                       </button>
-                    ),
+                    )
                   )}
                   <Button className="capitalize mt-4 bg-transparent hover:bg-transparent w-full text-start text-accent border-[1px] border-accent">
                     Contact
