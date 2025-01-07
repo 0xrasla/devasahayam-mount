@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Disallow sensitive or admin pages (if any)
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap URL (important for SEO)
+Sitemap: https://www.devasahayammountshrine.com/sitemap.xml
