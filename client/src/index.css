@@ -142,6 +142,7 @@
 
 body {
   font-family: "Avenir LT Std", sans-serif;
+  background: white !important;
 }
 
 .cards {

@@ -72,6 +72,22 @@ export default function Navbar() {
                 {item}
               </button>
             ))}
+            <button
+              key={"massbooking"}
+              onClick={() => {
+                window.open(
+                  "https://docs.google.com/forms/d/e/1FAIpQLSeZYID_bglTxsK9dNH3_RTGnmTOJbGRaTd8wahKa-g4gham5g/viewform?usp=dialog",
+                  "_blank"
+                );
+              }}
+              className={`transition-colors duration-300 ${
+                isScrolled
+                  ? "text-shrine-700 hover:text-shrine-900"
+                  : "text-shrine-600 hover:text-shrine-800"
+              }`}
+            >
+              Mass Booking
+            </button>
           </div>
 
           <div className="gap-4 font-avenir hidden md:flex space-x-4">

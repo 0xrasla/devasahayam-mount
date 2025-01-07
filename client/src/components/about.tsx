@@ -72,7 +72,7 @@ export default function About() {
       </div>
 
       <div className="md:w-[90%] md:mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <h2 className="text-[26px] font-bold text-gray-900 p-[0] md:text-maincol md:text-[30px]">
+        <h2 className="text-[26px] font-bold p-[0] text-maincol md:text-[30px]">
           About Our Shrine
         </h2>
         <p className="text-sm text-black md:text-[18px] font-avenir">
