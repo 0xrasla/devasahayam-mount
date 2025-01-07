@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone } from "lucide-react";
+import { MailIcon, MapPin, Phone } from "lucide-react";
 
 export default function Footer() {
   const quickLinks = [
@@ -9,16 +9,10 @@ export default function Footer() {
     { name: "Gallery", href: "#gallery" },
   ];
 
-  const massTimings = [
-    { day: "Weekdays", time: "6:30 AM, 6:00 PM" },
-    { day: "Saturday", time: "6:30 AM, 5:30 PM" },
-    { day: "Sunday", time: "6:30 AM, 8:30 AM, 5:30 PM" },
-  ];
-
   return (
     <footer className="bg-accent text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
           <div>
             <h3 className="text-white text-lg font-bold mb-4">Contact Us</h3>
             <div className="space-y-3">
@@ -29,7 +23,7 @@ export default function Footer() {
                 </span>
               </div>
               <div className="flex items-center">
-                <Mail size={20} className="mr-2" />
+                <MailIcon size={20} className="mr-2" />
                 <span>
                   <a href="mailto:devasahayammount.web@gmail.com">
                     devasahayammount.web@gmail.com
@@ -70,7 +64,7 @@ export default function Footer() {
                 onClick={() => {
                   window.open(
                     "https://www.facebook.com/Devasahayammountshrine",
-                    "_blank",
+                    "_blank"
                   );
                 }}
               />
@@ -80,7 +74,7 @@ export default function Footer() {
                 onClick={() => {
                   window.open(
                     "https://www.instagram.com/devasahayammountshrine?igsh=MXJ1d3N5aXlxcHVuMw==",
-                    "_blank",
+                    "_blank"
                   );
                 }}
               />
@@ -90,7 +84,7 @@ export default function Footer() {
                 onClick={() => {
                   window.open(
                     "https://youtube.com/@devasahayammountshrine5677?si=VMI5LnpVg0_qa_Ud",
-                    "_blank",
+                    "_blank"
                   );
                 }}
               />
