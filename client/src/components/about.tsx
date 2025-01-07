@@ -52,7 +52,7 @@ export default function About() {
     <section id="about" className="relative to-white w-screen">
       <div className="relative w-full my-6 flex justify-center">
         <div className="relative w-full">
-          <h2 className="py-2 md:text-[26px] md:text-maincol md:w-[87%] md:mx-auto">
+          <h2 className="py-2 md:text-[26px] md:text-maincol md:w-[87%] md:mx-auto mx-6">
             Devasahayam Mount in Tamil Nadu is a sacred site where St.
             Devasahayam, India’s first lay saint, was martyred in 1752. <br />{" "}
             It is home to the Our Lady of Sorrows Church, which also serves as a
@@ -70,7 +70,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="max-w-7xl md:w-full md:mx-0 mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div className="md:w-[90%] md:mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <h2 className="text-[26px] font-bold text-gray-900 p-[0] md:text-maincol md:text-[30px]">
           About Our Shrine
         </h2>

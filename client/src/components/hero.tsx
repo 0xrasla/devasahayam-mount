@@ -11,8 +11,15 @@ export default function HeroDesignNew() {
           <img
             src="/marie.jpg"
             alt="Our Lady of Sorrows Church"
-            className="absolute top-0 left-0 w-full h-full object-cover"
+            className="absolute top-0 left-0 w-full h-full object-cover md:hidden"
           />
+
+          <img
+            src="/hero.jpg"
+            alt="Green Bg"
+            className="absolute top-0 left-0 w-full h-full object-cover hidden md:block"
+          />
+
           <div className="absolute bottom-0 left-0 right-0">
             <div className="relative w-full max-w-3xl md:max-w-full mx-auto text-start">
               <div className="bg-black/50 backdrop-blur-md text-white py-4 md:py-12 px-6 rounded-md md:flex md:flex-col md:gap-2">
@@ -31,7 +38,7 @@ export default function HeroDesignNew() {
             </div>
           </div>
         </div>
-        <p className="text-sm p-4 leading-normal font-medium">
+        <p className="text-sm px-4 p-4 leading-normal font-medium">
           Devasahayam Mount in Tamil Nadu is a sacred site where St.
           Devasahayam, India’s first lay saint, was martyred in 1752. It is home
           to the Our Lady of Sorrows Church, which also serves as a prominent
