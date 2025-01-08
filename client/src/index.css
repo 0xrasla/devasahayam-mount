@@ -216,3 +216,7 @@ body {
     transform: scale(1.2, 1);
   }
 }
+
+.scrollbar-width-none{
+  scrollbar-width: none;
+}
