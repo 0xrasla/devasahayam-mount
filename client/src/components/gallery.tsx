@@ -35,8 +35,8 @@ if(positionInChunk === 2 ) {
   return (
     <>
     <div className="flex flex-col gap-2">
-      <img src={image?.src} alt="" className="min-w-16 max-w-48 md:min-w-48 md:max-w-64 lg:min-w-64 lg:max-w-72 object-cover rounded-lg aspect-auto h-full" />
-      <img src={images[index + 1]?.src} alt="" className="min-w-16 md:min-w-48 md:max-w-64 lg:min-w-64 lg:max-w-72 max-w-48 object-cover rounded-lg aspect-auto h-full" />
+      <img src={image?.src} alt="" className="min-w-16 max-w-48 md:min-w-48 md:max-w-64 lg:min-w-64 lg:max-w-72 object-cover rounded-lg aspect-square h-full" />
+      <img src={images[index + 1]?.src} alt="" className="min-w-16 md:min-w-48 md:max-w-64 lg:min-w-64 lg:max-w-72 max-w-48 object-cover rounded-lg aspect-square h-full" />
     </div>
     
     </>
@@ -46,7 +46,7 @@ if(positionInChunk === 2 ) {
 return (
 <>
 <div className="">
-  <img src={image?.src} alt="" className="min-w-24 max-w-64 h-full  object-cover rounded-lg md:min-w-64 md:max-w-72 lg:min-w-64 lg:max-w-96  aspect-auto" />
+  <img src={image?.src} alt="" className="min-w-24 max-w-64 h-full  object-cover rounded-lg md:min-w-64 md:max-w-72 lg:min-w-64 lg:max-w-96  aspect-square" />
 </div>
 
 </>
