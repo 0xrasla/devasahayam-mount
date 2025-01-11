@@ -1,3 +1,4 @@
+import { useViewportSize } from "@mantine/hooks";
 import { motion } from "motion/react";
 // @ts-ignore
 import Slider from "react-slick";
@@ -13,31 +14,35 @@ export default function SecondDesign() {
     slidesToScroll: 1,
     swipeToSlide: true,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 3000,
     pauseOnHover: false,
     arrows: false,
     fade: true,
   };
 
+  const { height, width } = useViewportSize();
+
   return (
     <motion.section
-      className="relative overflow-hidden h-screen w-[95%] mx-auto mt-4"
+      className="relative overflow-hidden h-screen w-full"
       id="home"
     >
       <div className="w-full h-full">
         <Slider {...settings}>
           <div className="flex flex-col justify-center items-center text-center relative h-screen w-screen">
-            <img
-              src="/marie.jpg"
-              alt="Our Lady of Sorrows Church"
-              className="absolute top-0 left-0 w-full h-full object-cover md:hidden"
-            />
-
-            <img
-              src="/hero.jpg"
-              alt="Green Bg"
-              className="absolute top-0 left-0 w-full h-full object-cover hidden md:block"
-            />
+            {width < 768 ? (
+              <img
+                src="/marie.jpg"
+                alt="Our Lady of Sorrows Church"
+                className="absolute top-0 left-0 w-full h-full object-cover"
+              />
+            ) : (
+              <img
+                src="/hero.jpg"
+                alt="Green Bg"
+                className="absolute top-0 left-0 w-full h-full object-cover"
+              />
+            )}
 
             <div className="absolute bottom-0 left-0 right-0">
               <div className="relative w-full max-w-3xl md:max-w-full mx-auto text-start">
@@ -72,17 +77,19 @@ export default function SecondDesign() {
           </div>
 
           <div className="flex flex-col justify-center items-center text-center relative h-screen w-screen">
-            <img
-              src="/assets/devasahayampillai.jpg"
-              alt="Our Lady of Sorrows Church"
-              className="absolute top-0 left-0 w-full h-full object-cover md:hidden"
-            />
-
-            <img
-              src="hero-desktop.jpg"
-              alt="Green Bg"
-              className="absolute top-0 left-0 w-full h-full object-cover hidden md:block"
-            />
+            {width < 768 ? (
+              <img
+                src="/assets/devasahayampillai.jpg"
+                alt="Our Lady of Sorrows Church"
+                className="absolute top-0 left-0 w-full h-full object-cover"
+              />
+            ) : (
+              <img
+                src="hero-desktop.jpg"
+                alt="Green Bg"
+                className="absolute top-0 left-0 w-full h-full object-cover hidden"
+              />
+            )}
 
             <div className="absolute bottom-0 left-0 right-0">
               <div className="relative w-full max-w-3xl md:max-w-full mx-auto text-start">

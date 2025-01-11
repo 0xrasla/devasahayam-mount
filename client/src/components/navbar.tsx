@@ -40,7 +40,9 @@ export default function Navbar() {
   return (
     <motion.nav
       className={`fixed w-full z-50 transition-all duration-300 font-outfit ${
-        isScrolled ? "bg-white shadow-md" : "bg-white"
+        isScrolled
+          ? "bg-white shadow-md text-black"
+          : "bg-transparent text-white font-bold"
       }`}
     >
       <div className="w-[90%] mx-auto">
@@ -59,7 +61,7 @@ export default function Navbar() {
           </span>
 
           <div className="hidden md:flex space-x-8 text-[18px] uppercase font-avenir">
-            {["Home", "About"].map((item) => (
+            {["About"].map((item) => (
               <button
                 key={item}
                 onClick={() => handleSmoothScroll(item.toLowerCase())}
