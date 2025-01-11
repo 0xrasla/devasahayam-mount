@@ -1,6 +1,5 @@
 import { useInterval, useViewportSize } from "@mantine/hooks";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { motion } from "motion/react";
 import { useState } from "react";
 // @ts-ignore
 import Slider from "react-slick";
@@ -78,22 +77,20 @@ export default function Hero() {
       {bgImages.map(
         (image, index) =>
           index === bgIndex && (
-            <motion.img
+            <div
               key={index}
-              src={image}
-              alt="hero background"
-              className="absolute top-0 w-full h-full object-cover object-[center_90%] -z-40"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 1 }}
-            />
+              className={`top-0 left-0 w-full h-full bg-cover bg-center -z-10 object-contain object-left`}
+              style={{
+                backgroundImage: `url(${image})`,
+                backgroundPosition: width > 768 ? "center" : "-400px",
+              }}
+            ></div>
           )
       )}
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-50 -z-40"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-50 -z-20"></div>
 
-      <div className="flex flex-col md:flex-row items-center  h-full gap-16 md:gap-0 md:mx-[10%] pt-[20%] md:py-0 md:w-auto w-full ">
+      <div className="flex flex-col md:flex-row items-center h-full gap-16 md:gap-0 md:mx-[10%] pt-[20%] md:py-0 md:w-auto w-full z-20">
         <div className="w-[90%] md:w-full mt-28 md:mt-0">
           <h1 className="text-5xl md:text-7xl text-white uppercase font-bold">
             Basilica of
