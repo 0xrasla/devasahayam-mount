@@ -9,7 +9,7 @@ export const Route = createFileRoute("/gallery")({
 });
 
 const photos :Photo[] = [
-  { src: "https://i.ibb.co/2WjZMH4/DSC09014.jpg", desc: "A beautiful sunrise.A beautiful sunrise.A beautiful sunrise.A beautiful sunrise.A beautiful sunrise.A beautiful sunrise.A beautiful sunrise.A beautiful sunrise." },
+  { src: "https://i.ibb.co/2WjZMH4/DSC09014.jpg", desc: "A beautiful sunrise.A beautiful sunrise.A beautiful sunrise.A beautiful sunrise.A beautiful sunrise.A beautiful sunrise." },
   { src: "https://i.ibb.co/xfbqLqQ/DSC09016a.jpg", desc: "Mountain view." },
   { src: "https://i.ibb.co/kgD3PvL/DSC08987.jpg", desc: "Serene beach scene." },
   { src: "https://i.ibb.co/2WjZMH4/DSC09014.jpg", desc: "A beautiful sunrise." },
@@ -159,7 +159,7 @@ useEffect(() => {
 
           <TabsContent value="youtube">
             <motion.div
-              className="flex gap-4 p-4 flex-wrap"
+              className="grid w-full gap-4 grid-cols-1  sm:grid-cols-3   md:grid-cols-4 lg:grid-cols-4"
               initial="hidden"
               animate="visible"
               variants={{
@@ -174,8 +174,8 @@ useEffect(() => {
                 visible: { opacity: 1, y: 0 },
               }}
               className="rounded-lg"
-              width="560"
-              height="315"
+              // width="560"
+              // height="315"
               src={video.src}
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
