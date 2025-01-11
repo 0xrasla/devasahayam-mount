@@ -40,10 +40,10 @@ export default function Navbar() {
   return (
     <motion.nav
       className={`fixed w-full z-50 transition-all duration-300 font-outfit ${
-        isScrolled ? "bg-white shadow-md py-6" : "bg-white py-6"
+        isScrolled ? "bg-white shadow-md" : "bg-white"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-[90%] mx-auto">
         <div className="flex justify-between items-center">
           <span
             className={`text-[16px] font-semibold transition-colors font-avenir cursor-pointer duration-300 ${
@@ -55,10 +55,10 @@ export default function Navbar() {
               });
             }}
           >
-            Our Lady of Sorrows Church
+            <img src="/logo.svg" alt="logo" className="w-[100px] h-[100px]" />
           </span>
 
-          <div className="hidden md:flex space-x-8 text-[18px] font-bold uppercase font-avenir">
+          <div className="hidden md:flex space-x-8 text-[18px] uppercase font-avenir">
             {["Home", "About"].map((item) => (
               <button
                 key={item}
@@ -72,11 +72,26 @@ export default function Navbar() {
                 {item}
               </button>
             ))}
+
             <button
-              key={"fathers"}
+              key={"masstiming"}
+              onClick={() => {
+                handleSmoothScroll("masstimings");
+              }}
+              className={`transition-colors duration-300 ${
+                isScrolled
+                  ? "text-shrine-700 hover:text-shrine-900"
+                  : "text-shrine-600 hover:text-shrine-800"
+              }`}
+            >
+              Mass Timings
+            </button>
+
+            <button
+              key={"gallery"}
               onClick={() => {
                 navigate({
-                  to: "/fathers",
+                  to: "/gallery",
                 });
               }}
               className={`transition-colors duration-300 ${
@@ -85,32 +100,15 @@ export default function Navbar() {
                   : "text-shrine-600 hover:text-shrine-800"
               }`}
             >
-              Fathers
-            </button>
-
-            <button
-              key={"massbooking"}
-              onClick={() => {
-                window.open(
-                  "https://docs.google.com/forms/d/e/1FAIpQLSeZYID_bglTxsK9dNH3_RTGnmTOJbGRaTd8wahKa-g4gham5g/viewform?usp=dialog",
-                  "_blank"
-                );
-              }}
-              className={`transition-colors duration-300 ${
-                isScrolled
-                  ? "text-shrine-700 hover:text-shrine-900"
-                  : "text-shrine-600 hover:text-shrine-800"
-              }`}
-            >
-              Mass Booking
+              Gallery
             </button>
           </div>
 
           <div className="gap-2 font-avenir hidden md:flex space-x-4">
-            <Button className="capitalize bg-transparent h-[42px] w-[116px] hover:bg-transparent rounded-lg text-start text-accent border-[1px] border-accent text-[16px]">
+            <Button className="capitalize bg-transparent h-[42px] font-bold w-[116px] hover:bg-transparent rounded-lg text-start text-accent border-[1px] border-accent text-[16px]">
               Contact
             </Button>
-            <Button className="capitalize text-start h-[42px] w-[116px] bg-accent hover:bg-accent text-[16px] rounded-lg">
+            <Button className="capitalize text-start h-[42px] w-[116px] font-bold bg-accent hover:bg-accent text-[16px] rounded-lg">
               Donate
             </Button>
           </div>

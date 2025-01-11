@@ -11,16 +11,30 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as MasstimingImport } from './routes/masstiming'
 import { Route as HistoryImport } from './routes/history'
+import { Route as GalleryImport } from './routes/gallery'
 import { Route as FathersImport } from './routes/fathers'
 import { Route as AboutImport } from './routes/about'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
 
+const MasstimingRoute = MasstimingImport.update({
+  id: '/masstiming',
+  path: '/masstiming',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const HistoryRoute = HistoryImport.update({
   id: '/history',
   path: '/history',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const GalleryRoute = GalleryImport.update({
+  id: '/gallery',
+  path: '/gallery',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -67,11 +81,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FathersImport
       parentRoute: typeof rootRoute
     }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryImport
+      parentRoute: typeof rootRoute
+    }
     '/history': {
       id: '/history'
       path: '/history'
       fullPath: '/history'
       preLoaderRoute: typeof HistoryImport
+      parentRoute: typeof rootRoute
+    }
+    '/masstiming': {
+      id: '/masstiming'
+      path: '/masstiming'
+      fullPath: '/masstiming'
+      preLoaderRoute: typeof MasstimingImport
       parentRoute: typeof rootRoute
     }
   }
@@ -83,14 +111,18 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/fathers': typeof FathersRoute
+  '/gallery': typeof GalleryRoute
   '/history': typeof HistoryRoute
+  '/masstiming': typeof MasstimingRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/fathers': typeof FathersRoute
+  '/gallery': typeof GalleryRoute
   '/history': typeof HistoryRoute
+  '/masstiming': typeof MasstimingRoute
 }
 
 export interface FileRoutesById {
@@ -98,15 +130,30 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/fathers': typeof FathersRoute
+  '/gallery': typeof GalleryRoute
   '/history': typeof HistoryRoute
+  '/masstiming': typeof MasstimingRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/fathers' | '/history'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/fathers'
+    | '/gallery'
+    | '/history'
+    | '/masstiming'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/fathers' | '/history'
-  id: '__root__' | '/' | '/about' | '/fathers' | '/history'
+  to: '/' | '/about' | '/fathers' | '/gallery' | '/history' | '/masstiming'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/fathers'
+    | '/gallery'
+    | '/history'
+    | '/masstiming'
   fileRoutesById: FileRoutesById
 }
 
@@ -114,14 +161,18 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   FathersRoute: typeof FathersRoute
+  GalleryRoute: typeof GalleryRoute
   HistoryRoute: typeof HistoryRoute
+  MasstimingRoute: typeof MasstimingRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   FathersRoute: FathersRoute,
+  GalleryRoute: GalleryRoute,
   HistoryRoute: HistoryRoute,
+  MasstimingRoute: MasstimingRoute,
 }
 
 export const routeTree = rootRoute
@@ -137,7 +188,9 @@ export const routeTree = rootRoute
         "/",
         "/about",
         "/fathers",
-        "/history"
+        "/gallery",
+        "/history",
+        "/masstiming"
       ]
     },
     "/": {
@@ -149,8 +202,14 @@ export const routeTree = rootRoute
     "/fathers": {
       "filePath": "fathers.tsx"
     },
+    "/gallery": {
+      "filePath": "gallery.tsx"
+    },
     "/history": {
       "filePath": "history.tsx"
+    },
+    "/masstiming": {
+      "filePath": "masstiming.tsx"
     }
   }
 }

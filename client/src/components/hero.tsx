@@ -1,50 +1,110 @@
-import { motion } from "motion/react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+// @ts-ignore
+import Slider from "react-slick";
+import { ReactTyped } from "react-typed";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 
 export default function HeroDesignNew() {
-  return (
-    <motion.section
-      className="relative overflow-hidden pt-16 h-screen w-screen"
-      id="home"
-    >
-      <div className="w-full h-full">
-        <div className="flex flex-col justify-center items-center text-center relative h-full w-screen">
-          <img
-            src="/marie.jpg"
-            alt="Our Lady of Sorrows Church"
-            className="absolute top-0 left-0 w-full h-full object-cover md:hidden"
-          />
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    swipeToSlide: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: false,
+    arrows: true,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+  };
 
-          <img
-            src="/hero.jpg"
-            alt="Green Bg"
-            className="absolute top-0 left-0 w-full h-full object-cover hidden md:block"
-          />
-
-          <div className="absolute bottom-0 left-0 right-0">
-            <div className="relative w-full max-w-3xl md:max-w-full mx-auto text-start">
-              <div className="bg-black/50 backdrop-blur-md text-white py-4 md:py-12 px-6 rounded-md md:flex md:flex-col md:gap-2">
-                <div className="md:flex md:flex-col md:gap-3 md:w-[90%] md:mx-auto">
-                  <h2 className="text-2xl font-semibold text-white md:font-black md:text-[50px] m-0">
-                    Our Lady of Sorrows Church
-                  </h2>
-                  <h4 className="font-semibold text-white md:font-normal md:text-[30px] m-0">
-                    Devasahayam Mount
-                  </h4>
-                  <button className=" text-white font-normal w-[132px] mt-2 p-2 text-center md:text-start bg-accent text-[16px] rounded-lg md:hidden">
-                    Plan to visit
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <p className="text-sm px-4 p-4 leading-normal font-medium">
-          Devasahayam Mount in Tamil Nadu is a sacred site where St.
-          Devasahayam, India’s first lay saint, was martyred in 1752. It is home
-          to the Our Lady of Sorrows Church, which also serves as a prominent
-          pilgrimage center.
-        </p>
+  function NextArrow(props: any) {
+    const { onClick } = props;
+    return (
+      <div
+        className="absolute top-1/2 right-4 transform -translate-y-1/2 z-20 cursor-pointer bg-black bg-opacity-50 p-2 rounded-full hover:bg-opacity-80"
+        onClick={onClick}
+      >
+        <ChevronRight color="white" size={32} />
       </div>
-    </motion.section>
+    );
+  }
+
+  function PrevArrow(props: any) {
+    const { onClick } = props;
+    return (
+      <div
+        className="absolute top-1/2 left-4 transform -translate-y-1/2 z-20 cursor-pointer bg-black bg-opacity-50 p-2 rounded-full hover:bg-opacity-80"
+        onClick={onClick}
+      >
+        <ChevronLeft color="white" size={32} />
+      </div>
+    );
+  }
+
+  return (
+    <div
+      className="h-screen mt-9 bg-gray-300 w-[95%] mx-auto"
+      style={{
+        background: "url(/assets/hero-blur.webp)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="flex items-center justify-between h-full mx-[10%]">
+        <div>
+          <h1 className="text-7xl text-white uppercase font-bold">
+            Basilica of
+          </h1>
+          <h2 className="text-6xl text-white" style={{ minHeight: "1em" }}>
+            <ReactTyped
+              strings={["Our Lady of Sorrow", "Martyr St.Devasahayam"]}
+              typeSpeed={100}
+              loop
+              cursorChar=""
+            />
+          </h2>
+        </div>
+
+        <div className="w-[600px] relative">
+          <Slider {...settings}>
+            <div className="relative p-4">
+              <iframe
+                className="rounded-lg"
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/NmOh2xDfTSU?si=fjtpdzJEFGy0Ga4a"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
+              <h2 className="text-white text-2xl text-center mt-4">
+                2024 Mass
+              </h2>
+            </div>
+
+            <div className="relative p-4">
+              <iframe
+                className="rounded-lg"
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/1uDfq0zVK04?si=bMvBi5Xux5ghqm7O"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
+              <h2 className="text-white text-2xl text-center mt-4">
+                2024 Mass
+              </h2>
+            </div>
+          </Slider>
+        </div>
+      </div>
+    </div>
   );
 }

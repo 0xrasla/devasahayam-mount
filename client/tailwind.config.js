@@ -10,7 +10,7 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        avenir: ["Avenir LT Std", "sans-serif"],
+        avenir: ["PT Sans", "sans-serif"],
       },
       colors: {
         background: "hsl(var(--background))",

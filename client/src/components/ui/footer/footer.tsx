@@ -3,10 +3,8 @@ import { MailIcon, MapPin, Phone } from "lucide-react";
 export default function Footer() {
   const quickLinks = [
     { name: "About", href: "#about" },
-    { name: "Mass Schedule", href: "#schedule" },
-    { name: "Shrine", href: "#shrine" },
-    { name: "Saint", href: "#saint" },
-    { name: "Gallery", href: "#gallery" },
+    { name: "Mass Timings", href: "#schedule" },
+    { name: "Gallery", href: "gallery" },
   ];
 
   return (

@@ -1,90 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@font-face {
-  font-family: "Avenir LT Std";
-  src: url("/fonts/AvenirLTStd-Black.otf") format("opentype");
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Avenir LT Std";
-  src: url("/fonts/AvenirLTStd-BlackOblique.otf") format("opentype");
-  font-weight: 900;
-  font-style: oblique;
-}
-
-@font-face {
-  font-family: "Avenir LT Std";
-  src: url("/fonts/AvenirLTStd-Book.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Avenir LT Std";
-  src: url("/fonts/AvenirLTStd-BookOblique.otf") format("opentype");
-  font-weight: 400;
-  font-style: oblique;
-}
-
-@font-face {
-  font-family: "Avenir LT Std";
-  src: url("/fonts/AvenirLTStd-Heavy.otf") format("opentype");
-  font-weight: 800;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Avenir LT Std";
-  src: url("/fonts/AvenirLTStd-HeavyOblique.otf") format("opentype");
-  font-weight: 800;
-  font-style: oblique;
-}
-
-@font-face {
-  font-family: "Avenir LT Std";
-  src: url("/fonts/AvenirLTStd-Light.otf") format("opentype");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Avenir LT Std";
-  src: url("/fonts/AvenirLTStd-LightOblique.otf") format("opentype");
-  font-weight: 300;
-  font-style: oblique;
-}
-
-@font-face {
-  font-family: "Avenir LT Std";
-  src: url("/fonts/AvenirLTStd-Medium.otf") format("opentype");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Avenir LT Std";
-  src: url("/fonts/AvenirLTStd-MediumOblique.otf") format("opentype");
-  font-weight: 500;
-  font-style: oblique;
-}
-
-@font-face {
-  font-family: "Avenir LT Std";
-  src: url("/fonts/AvenirLTStd-Oblique.otf") format("opentype");
-  font-weight: 400;
-  font-style: oblique;
-}
-
-@font-face {
-  font-family: "Avenir LT Std";
-  src: url("/fonts/AvenirLTStd-Roman.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-}
 
 :root {
   --background: 220.9 100% 95%;
@@ -141,7 +59,7 @@
 }
 
 body {
-  font-family: "Avenir LT Std", sans-serif;
+  font-family: "PT Sans", sans-serif;
   background: white !important;
 }
 
@@ -217,6 +135,6 @@ body {
   }
 }
 
-.scrollbar-width-none{
+.scrollbar-width-none {
   scrollbar-width: none;
 }
