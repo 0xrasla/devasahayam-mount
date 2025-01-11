@@ -8,6 +8,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { useNavigate } from "@tanstack/react-router";
+import { MenuIcon } from "lucide-react";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 
@@ -39,11 +40,9 @@ export default function Navbar() {
 
   return (
     <motion.nav
-      className={`fixed w-full z-50 transition-all duration-300 font-outfit ${
-        isScrolled ? "bg-white shadow-md" : "bg-white"
-      }`}
+      className={`fixed h-[60px] w-full z-50 transition-colors duration-200 font-outfit text-white`}
     >
-      <div className="w-[90%] mx-auto">
+      <div className="px-[5%]">
         <div className="flex justify-between items-center">
           <span
             className={`text-[16px] font-semibold transition-colors font-avenir cursor-pointer duration-300 ${
@@ -55,7 +54,11 @@ export default function Navbar() {
               });
             }}
           >
-            <img src="/logo.svg" alt="logo" className="w-[100px] h-[100px]" />
+            <img
+              src="/logo.svg"
+              alt="logo"
+              className="w-[60px] md:w-[100px] h-[100px]"
+            />
           </span>
 
           <div className="hidden md:flex space-x-8 text-[18px] uppercase font-avenir">
@@ -105,7 +108,9 @@ export default function Navbar() {
           </div>
 
           <div className="gap-2 font-avenir hidden md:flex space-x-4">
-            <Button className="capitalize bg-transparent h-[42px] font-bold w-[116px] hover:bg-transparent rounded-lg text-start text-accent border-[1px] border-accent text-[16px]">
+            <Button
+              className={`capitalize bg-transparent h-[42px] font-bold w-[116px] hover:bg-transparent rounded-lg text-start ${isScrolled ? "text-accent" : "text-white"} border-[1px] border-accent text-[16px]`}
+            >
               Contact
             </Button>
             <Button className="capitalize text-start h-[42px] w-[116px] font-bold bg-accent hover:bg-accent text-[16px] rounded-lg">
@@ -116,11 +121,11 @@ export default function Navbar() {
           <div className="md:hidden">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <button className="text-shrine-700 focus:outline-none">
-                  <img src="/assets/hamburger-menu.svg" />
+                <button className="focus:outline-none">
+                  <MenuIcon className="w-[30px] h-[30px]" />
                 </button>
               </SheetTrigger>
-              <SheetContent side="right">
+              <SheetContent side="right" className="bg-white min-h-screen">
                 <SheetHeader>
                   <SheetTitle className="text-start"></SheetTitle>
                   <SheetDescription></SheetDescription>
@@ -137,28 +142,25 @@ export default function Navbar() {
                   ))}
 
                   <button
-                    key={"fathers"}
+                    key={"masstiming"}
                     onClick={() => {
-                      navigate({
-                        to: "/fathers",
-                      });
+                      handleSmoothScroll("masstimings");
                     }}
-                    className="text-shrine-700 hover:text-shrine-900 text-[16px] font-bold"
+                    className={`text-shrine-700 hover:text-shrine-900 text-[16px] font-bold`}
                   >
-                    Fathers
+                    Mass Timings
                   </button>
 
                   <button
-                    key={"massbooking"}
+                    key={"gallery"}
                     onClick={() => {
-                      window.open(
-                        "https://docs.google.com/forms/d/e/1FAIpQLSeZYID_bglTxsK9dNH3_RTGnmTOJbGRaTd8wahKa-g4gham5g/viewform?usp=dialog",
-                        "_blank"
-                      );
+                      navigate({
+                        to: "/gallery",
+                      });
                     }}
-                    className="text-shrine-700 hover:text-shrine-900 text-[16px] font-bold"
+                    className={`text-shrine-700 hover:text-shrine-900 text-[16px] font-bold`}
                   >
-                    Mass Booking
+                    Gallery
                   </button>
 
                   <Button className="capitalize mt-4 bg-transparent hover:bg-transparent w-full text-start text-accent border-[1px] border-accent">

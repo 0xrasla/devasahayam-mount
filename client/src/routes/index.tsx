@@ -1,9 +1,9 @@
+import Address from "@/components/address";
 import Gallery from "@/components/gallery";
-import HeroDesignNew from "@/components/hero";
+import Hero from "@/components/hero";
 import MassTimings from "@/components/masstimings";
 import SecondDesign from "@/components/secondsection";
 import Footer from "@/components/ui/footer/footer";
-import Visit from "@/components/visit";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
@@ -13,12 +13,11 @@ export const Route = createFileRoute("/")({
 function HomeComponent() {
   return (
     <div className="overflow-x-hidden">
-      <HeroDesignNew />
+      <Hero />
       <SecondDesign />
       <MassTimings />
       <Gallery />
-      {/* <SaintNewDesign /> */}
-      <Visit />
+      <Address />
       <Footer />
     </div>
   );

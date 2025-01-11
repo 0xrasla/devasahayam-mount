@@ -1,8 +1,8 @@
 import { openGoogleMap } from "@/lib/utils";
 
-export default function Visit() {
+export default function Address() {
   return (
-    <section id="visit" className="pt-2">
+    <section id="visit" className="">
       <div className="bg-white py-2">
         <div className="max-w-6xl px-5 md:max-w-[90%] md:mx-auto">
           <h1 className="text-[27px] md:text-[30px] font-bold py-4 text-maincol">
