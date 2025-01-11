@@ -1,4 +1,5 @@
 import Address from "@/components/address";
+import { FathersSection } from "@/components/fathers-section";
 import Gallery from "@/components/gallery";
 import Hero from "@/components/hero";
 import MassTimings from "@/components/masstimings";
@@ -16,6 +17,7 @@ function HomeComponent() {
       <Hero />
       <SecondDesign />
       <MassTimings />
+      <FathersSection />
       <Gallery />
       <Address />
       <Footer />
