@@ -1,12 +1,38 @@
-import { useViewportSize } from "@mantine/hooks";
+import { useInterval, useViewportSize } from "@mantine/hooks";
+import { AnimatePresence, motion } from "framer-motion"; // Fixed import error
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useState } from "react";
 // @ts-ignore
 import Slider from "react-slick";
 import { ReactTyped } from "react-typed";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
-export default function HeroDesignNew() {
+function NextArrow(props: any) {
+  const { onClick } = props;
+  return (
+    <div
+      className="absolute top-1/2 right-4 transform -translate-y-1/2 z-20 cursor-pointer bg-black bg-opacity-50 p-2 rounded-full hover:bg-opacity-80"
+      onClick={onClick}
+    >
+      <ChevronRight color="white" size={32} />
+    </div>
+  );
+}
+
+function PrevArrow(props: any) {
+  const { onClick } = props;
+  return (
+    <div
+      className="absolute top-1/2 left-4 transform -translate-y-1/2 z-20 cursor-pointer bg-black bg-opacity-80 p-2 rounded-full hover:bg-opacity-80"
+      onClick={onClick}
+    >
+      <ChevronLeft color="white" size={32} />
+    </div>
+  );
+}
+
+export default function Hero() {
   const { width } = useViewportSize();
 
   const getIframeDimensions = () => {
@@ -16,6 +42,8 @@ export default function HeroDesignNew() {
     const calculatedHeight = calculatedWidth / aspectRatio;
     return { calculatedWidth, calculatedHeight };
   };
+
+  const [bgIndex, setBgIndex] = useState(0);
 
   const settings = {
     infinite: true,
@@ -31,49 +59,46 @@ export default function HeroDesignNew() {
     prevArrow: <PrevArrow />,
   };
 
-  function NextArrow(props: any) {
-    const { onClick } = props;
-    return (
-      <div
-        className="absolute top-1/2 right-4 transform -translate-y-1/2 z-20 cursor-pointer bg-black bg-opacity-50 p-2 rounded-full hover:bg-opacity-80"
-        onClick={onClick}
-      >
-        <ChevronRight color="white" size={32} />
-      </div>
-    );
-  }
+  const bgImages = ["/assets/hero-blur.webp", "/hero.jpg"];
 
-  function PrevArrow(props: any) {
-    const { onClick } = props;
-    return (
-      <div
-        className="absolute top-1/2 left-4 transform -translate-y-1/2 z-20 cursor-pointer bg-black bg-opacity-80 p-2 rounded-full hover:bg-opacity-80"
-        onClick={onClick}
-      >
-        <ChevronLeft color="white" size={32} />
-      </div>
-    );
-  }
+  useInterval(() => {
+    setBgIndex((prevIndex) => (prevIndex + 1) % bgImages.length);
+  }, 3000);
 
   const { calculatedWidth, calculatedHeight } = getIframeDimensions();
 
   return (
-    <div
-      className="h-screen bg-gray-300 w-full"
-      style={{
-        background: "url(/assets/hero-blur.webp)",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      <div className="flex flex-col md:flex-row items-center  h-full gap-16 md:gap-0 md:mx-[10%] pt-[20%] md:py-0 md:w-auto w-full">
-        <div className="w-[90%] md:w-full mt-28 md:mt-0">
-          <h1 className="text-5xl md:text-7xl text-white uppercase font-bold">
+    <div className="h-screen w-full relative overflow-hidden">
+      <AnimatePresence>
+        {bgImages.map(
+          (image, index) =>
+            index === bgIndex && (
+              <motion.div
+                key={index}
+                className="fixed top-0 left-0 w-full h-full z-0"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 2 }}
+              >
+                <img
+                  src={image}
+                  alt="hero background"
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+            )
+        )}
+      </AnimatePresence>
+
+      <div className="relative z-10 flex flex-col md:flex-row items-center h-full gap-16 md:gap-0 md:mx-[10%] pt-[20%] md:py-0 md:w-auto w-full">
+        <div className="w-[90%] md:w-full mt-28 md:mt-0 text-white">
+          <h1 className="text-5xl md:text-7xl uppercase font-bold drop-shadow-lg">
             Basilica of
           </h1>
-          <h2 className="text-3xl md:text-6xl text-white min-h-[2em]">
+          <h2 className="text-3xl md:text-6xl min-h-[2em] drop-shadow-lg">
             <ReactTyped
-              strings={["Our Lady of Sorrow", "Martyr St.Devasahayam"]}
+              strings={["Our Lady of Sorrow", "Martyr St. Devasahayam"]}
               typeSpeed={100}
               loop
               cursorChar=""
@@ -81,7 +106,7 @@ export default function HeroDesignNew() {
           </h2>
         </div>
 
-        <div className="w-[400px] md:w-[600px] relative">
+        <div className="w-[400px] md:w-[600px] relative hidden md:block z-10">
           <Slider {...settings}>
             {["NmOh2xDfTSU", "1uDfq0zVK04"].map((videoId, index) => (
               <div key={index} className="relative p-4">
@@ -95,7 +120,7 @@ export default function HeroDesignNew() {
                   referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
                 ></iframe>
-                <h2 className="text-white text-2xl text-center mt-4">
+                <h2 className="text-white text-2xl text-center mt-4 drop-shadow-lg">
                   2024 Mass
                 </h2>
               </div>

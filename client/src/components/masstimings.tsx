@@ -30,8 +30,8 @@ export default function MassTimings() {
   ];
 
   return (
-    <section id="masstimings" className="to-white w-[90%] mx-auto">
-      <div className="py-6">
+    <section id="masstimings" className="bg-white mx-auto">
+      <div className="p-6">
         <h2 className="text-[26px] font-bold p-[0] text-maincol md:text-[30px]">
           Mass Timings
         </h2>

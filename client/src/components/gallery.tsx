@@ -10,7 +10,7 @@ export default function Gallery() {
   ];
 
   return (
-    <section id="gallery" className="py-2 h-full  ">
+    <section id="gallery" className="h-full bg-white">
       <h2 className="text-[27px]  text-black font-bold md:w-[87%] md:mx-auto mx-6  py-2">
         Gallery
       </h2>

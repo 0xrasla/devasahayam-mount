@@ -8,6 +8,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { useNavigate } from "@tanstack/react-router";
+import { MenuIcon } from "lucide-react";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 
@@ -39,7 +40,7 @@ export default function Navbar() {
 
   return (
     <motion.nav
-      className={`fixed w-full z-50 transition-all duration-300 font-outfit ${
+      className={`fixed w-full z-50 transition-all duration-200 font-outfit ${
         isScrolled
           ? "bg-white shadow-md text-black"
           : "bg-transparent text-white font-bold"
@@ -57,11 +58,15 @@ export default function Navbar() {
               });
             }}
           >
-            <img src="/logo.svg" alt="logo" className="w-[100px] h-[100px]" />
+            <img
+              src="/logo.svg"
+              alt="logo"
+              className="w-[70px] md:w-[100px] h-[100px]"
+            />
           </span>
 
           <div className="hidden md:flex space-x-8 text-[18px] uppercase font-avenir">
-            {["About"].map((item) => (
+            {["Home", "About"].map((item) => (
               <button
                 key={item}
                 onClick={() => handleSmoothScroll(item.toLowerCase())}
@@ -118,11 +123,11 @@ export default function Navbar() {
           <div className="md:hidden">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <button className="text-shrine-700 focus:outline-none">
-                  <img src="/assets/hamburger-menu.svg" />
+                <button className="focus:outline-none">
+                  <MenuIcon className="w-[30px] h-[30px]" />
                 </button>
               </SheetTrigger>
-              <SheetContent side="right">
+              <SheetContent side="right" className="bg-white">
                 <SheetHeader>
                   <SheetTitle className="text-start"></SheetTitle>
                   <SheetDescription></SheetDescription>
@@ -139,28 +144,25 @@ export default function Navbar() {
                   ))}
 
                   <button
-                    key={"fathers"}
+                    key={"masstiming"}
                     onClick={() => {
-                      navigate({
-                        to: "/fathers",
-                      });
+                      handleSmoothScroll("masstimings");
                     }}
-                    className="text-shrine-700 hover:text-shrine-900 text-[16px] font-bold"
+                    className={`text-shrine-700 hover:text-shrine-900 text-[16px] font-bold`}
                   >
-                    Fathers
+                    Mass Timings
                   </button>
 
                   <button
-                    key={"massbooking"}
+                    key={"gallery"}
                     onClick={() => {
-                      window.open(
-                        "https://docs.google.com/forms/d/e/1FAIpQLSeZYID_bglTxsK9dNH3_RTGnmTOJbGRaTd8wahKa-g4gham5g/viewform?usp=dialog",
-                        "_blank"
-                      );
+                      navigate({
+                        to: "/gallery",
+                      });
                     }}
-                    className="text-shrine-700 hover:text-shrine-900 text-[16px] font-bold"
+                    className={`text-shrine-700 hover:text-shrine-900 text-[16px] font-bold`}
                   >
-                    Mass Booking
+                    Gallery
                   </button>
 
                   <Button className="capitalize mt-4 bg-transparent hover:bg-transparent w-full text-start text-accent border-[1px] border-accent">
