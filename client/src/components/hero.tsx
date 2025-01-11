@@ -79,7 +79,7 @@ export default function Hero() {
           index === bgIndex && (
             <div
               key={index}
-              className={`top-0 left-0 w-full h-full bg-cover bg-center -z-10 object-contain object-left`}
+              className={`absolute top-0 left-0 w-full h-full -z-30 bg-cover bg-center 0 object-contain object-left`}
               style={{
                 backgroundImage: `url(${image})`,
                 backgroundPosition: width > 768 ? "center" : "-400px",
