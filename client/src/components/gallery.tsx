@@ -11,15 +11,18 @@ export default function Gallery() {
 
   return (
     <section id="gallery" className="py-2 h-full  ">
-      <h2 className="text-[27px]  text-black font-bold md:w-[87%] md:mx-auto mx-6  py-2">
-        Gallery
-      </h2>
 
-      <div className=" md:w-[87%] md:mx-auto mx-6 px-4 py-2 overflow-x-auto scrollbar-width-none">
-        <div className="flex   gap-2">
-          {images.map((image, index) => {
-            const positionInChunk = (index % 3) + 1;
-            console.log(positionInChunk);
+
+<h2 className="text-[27px]  text-black font-bold md:w-[90%] md:px-0 md:mx-auto mx-4 lg:px-0  py-2">Gallery</h2>
+
+
+
+<div className=" md:w-[90%] md:mx-auto mx-4 md:px-0 lg:px-0 py-2 overflow-x-auto scrollbar-width-none">
+<div className="flex   gap-2">
+{images.map((image, index) => {
+
+const positionInChunk = (index % 3) + 1;
+console.log(positionInChunk);
 
             if (positionInChunk === 3) {
               return null;
