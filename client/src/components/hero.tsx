@@ -1,6 +1,6 @@
 import { useInterval, useViewportSize } from "@mantine/hooks";
-import { AnimatePresence, motion } from "framer-motion"; // Fixed import error
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { motion } from "motion/react";
 import { useState } from "react";
 // @ts-ignore
 import Slider from "react-slick";
@@ -59,46 +59,48 @@ export default function Hero() {
     prevArrow: <PrevArrow />,
   };
 
-  const bgImages = ["/assets/hero-blur.webp", "/hero.jpg"];
+  const bgImages = ["/hero.jpg"];
 
-  useInterval(() => {
-    setBgIndex((prevIndex) => (prevIndex + 1) % bgImages.length);
-  }, 3000);
+  useInterval(
+    () => {
+      setBgIndex((prevIndex) => (prevIndex + 1) % bgImages.length);
+    },
+    3000,
+    {
+      autoInvoke: true,
+    }
+  );
 
   const { calculatedWidth, calculatedHeight } = getIframeDimensions();
 
   return (
-    <div className="h-screen w-full relative overflow-hidden">
-      <AnimatePresence>
-        {bgImages.map(
-          (image, index) =>
-            index === bgIndex && (
-              <motion.div
-                key={index}
-                className="fixed top-0 left-0 w-full h-full z-0"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 2 }}
-              >
-                <img
-                  src={image}
-                  alt="hero background"
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-            )
-        )}
-      </AnimatePresence>
+    <div className="h-screen bg-transparent w-full relative overflow-hidden">
+      {bgImages.map(
+        (image, index) =>
+          index === bgIndex && (
+            <motion.img
+              key={index}
+              src={image}
+              alt="hero background"
+              className="absolute top-0 w-full h-full object-cover object-[center_90%] -z-40"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1 }}
+            />
+          )
+      )}
 
-      <div className="relative z-10 flex flex-col md:flex-row items-center h-full gap-16 md:gap-0 md:mx-[10%] pt-[20%] md:py-0 md:w-auto w-full">
-        <div className="w-[90%] md:w-full mt-28 md:mt-0 text-white">
-          <h1 className="text-5xl md:text-7xl uppercase font-bold drop-shadow-lg">
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-50 -z-40"></div>
+
+      <div className="flex flex-col md:flex-row items-center  h-full gap-16 md:gap-0 md:mx-[10%] pt-[20%] md:py-0 md:w-auto w-full ">
+        <div className="w-[90%] md:w-full mt-28 md:mt-0">
+          <h1 className="text-5xl md:text-7xl text-white uppercase font-bold">
             Basilica of
           </h1>
-          <h2 className="text-3xl md:text-6xl min-h-[2em] drop-shadow-lg">
+          <h2 className="text-3xl md:text-6xl text-white min-h-[2em]">
             <ReactTyped
-              strings={["Our Lady of Sorrow", "Martyr St. Devasahayam"]}
+              strings={["Our Lady of Sorrow", "Martyr St.Devasahayam"]}
               typeSpeed={100}
               loop
               cursorChar=""
@@ -106,7 +108,7 @@ export default function Hero() {
           </h2>
         </div>
 
-        <div className="w-[400px] md:w-[600px] relative hidden md:block z-10">
+        <div className="w-[400px] md:w-[600px] relative hidden md:block">
           <Slider {...settings}>
             {["NmOh2xDfTSU", "1uDfq0zVK04"].map((videoId, index) => (
               <div key={index} className="relative p-4">
@@ -120,7 +122,7 @@ export default function Hero() {
                   referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
                 ></iframe>
-                <h2 className="text-white text-2xl text-center mt-4 drop-shadow-lg">
+                <h2 className="text-white text-2xl text-center mt-4">
                   2024 Mass
                 </h2>
               </div>
