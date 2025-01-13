@@ -8,7 +8,7 @@ export const Route = createFileRoute("/gallery")({
   component: Gallery,
 });
 
-const photos :Photo[] = [
+const photos: Photo[] = [
   { src: "https://i.ibb.co/2WjZMH4/DSC09014.jpg", desc: "A beautiful sunrise.A beautiful sunrise.A beautiful sunrise.A beautiful sunrise.A beautiful sunrise.A beautiful sunrise." },
   { src: "https://i.ibb.co/xfbqLqQ/DSC09016a.jpg", desc: "Mountain view." },
   { src: "https://i.ibb.co/kgD3PvL/DSC08987.jpg", desc: "Serene beach scene." },
@@ -36,9 +36,15 @@ const photos :Photo[] = [
 ];
 
 const videos = [
-  { src: "video1.mp4", desc: "Travel highlights." },
-  { src: "video2.mp4", desc: "City timelapse." },
-  { src: "video3.mp4", desc: "Nature exploration." },
+  { src: "hero.mp4", desc: "Travel highlights." },
+  { src: "hero.mp4", desc: "City timelapse." },
+  { src: "hero.mp4", desc: "Nature exploration." },
+  { src: "hero.mp4", desc: "Travel highlights." },
+  { src: "hero.mp4", desc: "City timelapse." },
+  { src: "hero.mp4", desc: "Nature exploration." },
+  { src: "hero.mp4", desc: "Travel highlights." },
+  { src: "hero.mp4", desc: "City timelapse." },
+  { src: "hero.mp4", desc: "Nature exploration." },
 ];
 const youtubeVideos = [
   { src: "https://www.youtube.com/embed/NmOh2xDfTSU?si=fjtpdzJEFGy0Ga4a", desc: "Travel highlights." },
@@ -60,51 +66,51 @@ interface Photo {
 
 
 function Gallery() {
-  const [updateImage,setUpdatedImages] =  useState <Photo[]> (photos)
+  const [updateImage, setUpdatedImages] = useState<Photo[]>(photos)
 
-useEffect(() => {
-  const preloadImages = async () => {
-    const loadedPhotos = await Promise.all(
-      photos.map(async (photo) => {
-        const img = new Image();
-        img.src = photo.src;
+  useEffect(() => {
+    const preloadImages = async () => {
+      const loadedPhotos = await Promise.all(
+        photos.map(async (photo) => {
+          const img = new Image();
+          img.src = photo.src;
 
-        await new Promise((resolve) => {
-          img.onload = resolve;
-          img.onerror = resolve; // Handle loading errors
-        });
+          await new Promise((resolve) => {
+            img.onload = resolve;
+            img.onerror = resolve;
+          });
 
-        return {
-          ...photo,
-          isPortrait: img.naturalHeight > img.naturalWidth,
-        };
-      })
-    );
-    console.log(loadedPhotos)
-    setUpdatedImages(loadedPhotos || []);
-  };
+          return {
+            ...photo,
+            isPortrait: img.naturalHeight > img.naturalWidth,
+          };
+        })
+      );
+      console.log(loadedPhotos)
+      setUpdatedImages(loadedPhotos || []);
+    };
 
-  preloadImages();
-}, []);
+    preloadImages();
+  }, []);
   return (
     <div className="h-screen">
-      <div className=" w-full h-full pt-[6%] px-6">
-        <Tabs defaultValue="photos" className="w-full">
-          <TabsList className="mt-8 md:mt-2">
-            <TabsTrigger className="font-bold font-avenir" value="photos">
+      <div className=" w-full h-full pt-[6%] px-8">
+        <Tabs defaultValue="photos" className="w-full mt-10 md:mt-12 lg:mt-2 ">
+          <TabsList className="">
+            <TabsTrigger className="font-bold font-avenir cursor-pointer" value="photos">
               Photos
             </TabsTrigger>
-            <TabsTrigger className="font-bold font-avenir" value="videos">
+            <TabsTrigger className="font-bold font-avenir cursor-pointer" value="videos">
               Videos
             </TabsTrigger>
-            <TabsTrigger className="font-bold font-avenir" value="youtube">
+            <TabsTrigger className="font-bold font-avenir cursor-pointer" value="youtube">
               YouTube
             </TabsTrigger>
           </TabsList>
 
           <TabsContent value="photos">
             <motion.div
-              className="grid w-full gap-4 grid-cols-1 grid-rows-2 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4 p-4 place-content-center place-items-center"
+              className="grid w-full gap-4 grid-cols-1 grid-rows-2 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4  place-content-center place-items-center"
               initial="hidden"
               animate="visible"
               variants={{
@@ -113,25 +119,25 @@ useEffect(() => {
               }}
             >
               {updateImage.map((photo, index) => (
-<motion.div
-  key={index}
-  variants={{
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  }}
-  className={`overflow-hidden relative h-full  rounded-lg shadow-lg ${photo?.isPortrait ? "row-span-2" : ""} `}
->
-  <img src={photo.src} alt={photo.desc} className="gallery-img h-full cursor-pointer object-cover" />
-  
-  <p className={`p-1 md:p-1 text-center absolute bg-white w-full h-1/2 hover:w-full opacity-0  img-desc ${photo?.isPortrait ? "hover:p-2" : ""}`} >{photo.desc}</p>
-</motion.div>
+                <motion.div
+                  key={index}
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  className={`overflow-hidden relative h-full  rounded-lg shadow-lg ${photo?.isPortrait ? "row-span-2" : ""} `}
+                >
+                  <img src={photo.src} alt={photo.desc} className="gallery-img h-full cursor-pointer object-cover" />
+
+                  <p className={`p-1 md:p-1 text-center absolute bg-white w-full h-1/2 hover:w-full opacity-0  img-desc ${photo?.isPortrait ? "hover:p-2" : ""}`} >{photo.desc}</p>
+                </motion.div>
               ))}
             </motion.div>
           </TabsContent>
 
           <TabsContent value="videos">
             <motion.div
-              className="grid grid-cols-1 grid-rows-2 sm:grid-cols-2   md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 place-content-center place-items-center"
+              className="grid w-full gap-4 grid-cols-1  sm:grid-cols-2   md:grid-cols-3 lg:grid-cols-4 place-content-center place-items-center"
               initial="hidden"
               animate="visible"
               variants={{
@@ -167,21 +173,23 @@ useEffect(() => {
                 visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
               }}
             >
-                            {youtubeVideos.map((video, index) => (
-              <motion.iframe
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              className="rounded-lg"
-              // width="560"
-              // height="315"
-              src={video.src}
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            ></motion.iframe>
+              {youtubeVideos.map((video, index) => (
+                <motion.div key={index} className="" >
+                  <motion.iframe
+                    variants={{
+                      hidden: { opacity: 0, y: 20 },
+                      visible: { opacity: 1, y: 0 },
+                    }}
+                    className="rounded-lg max-w-full  shadow-lg"
+                    // width="560"
+                    // height="315"
+                    src={video.src}
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  ></motion.iframe>
+                </motion.div>
               ))}
 
 

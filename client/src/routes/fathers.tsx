@@ -89,57 +89,62 @@ function RouteComponent() {
   ];
 
   return (
-    <div className="pt-[5%] space-y-8 grid grid-cols-2 gap-4">
-      <h1 className="text-3xl font-bold">Fathers Information</h1>
+    <div className="pt-[5%] space-y-12 p-4 ">
+      <h1 className="text-3xl font-bold mt-8">Fathers Information</h1>
 
-      <section>
-        <h2 className="text-2xl font-semibold mb-4">Parish Priests</h2>
-        <ul className="list-disc list-inside space-y-2">
-          {fathers.map((father, index) => (
-            <li key={index} className="text-lg">
-              <span className="font-medium">{father.name}</span> ({father.from}{" "}
-              - {father.till})
-            </li>
-          ))}
-        </ul>
-      </section>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 gap-4 h-full  ">
 
-      <section>
-        <h2 className="text-2xl font-semibold mb-4">
-          Assistant Parish Priests
-        </h2>
-        <ul className="list-disc list-inside space-y-2">
-          {assistantFathers.map((father, index) => (
-            <li key={index} className="text-lg">
-              <span className="font-medium">{father.name}</span> ({father.from}{" "}
-              - {father.till})
-            </li>
-          ))}
-        </ul>
-      </section>
+        <section className="lg:col-span-2 lg:row-span-2 custom-shadow p-4 rounded-lg" >
+          <h2 className="text-2xl font-semibold mb-4">Assistant Parish Priests</h2>
+          <ul className=" list-inside space-y-2">
+            {assistantFathers.map((father, index) => (
+              <li key={index} className="lg:text-lg text-sm custom-shadow p-2 rounded-lg flex justify-between flex-col sm:flex-row">
+                <span className="font-medium">{father.name}</span> ({father.from}{" "}
+                - {father.till})
+              </li>
+            ))}
+          </ul>
+        </section>
+        <section className="lg:row-span-3 custom-shadow  p-4 h-full rounded-lg" >
+          <h2 className="text-2xl font-semibold mb-4"> Parish Priests</h2>
+          <ul className=" list-inside space-y-2">
+            {fathers.map((father, index) => (
+              <li key={index} className="lg:text-lg text-sm custom-shadow p-2 rounded-lg flex justify-between flex-col sm:flex-row">
+                <span className="font-medium">{father.name}</span> ({father.from}{" "}
+                - {father.till})
+              </li>
+            ))}
+          </ul>
+        </section>
+        <section className="row-span-1 custom-shadow p-4  rounded-lg "  >
+          <h2 className="text-2xl font-semibold mb-4">Son of Soils</h2>
+          <ul className=" list-inside space-y-2 ">
 
-      <section>
-        <h2 className="text-2xl font-semibold mb-4">Son of Soils</h2>
-        <ul className="list-disc list-inside space-y-2">
-          {sonOfSoils.map((priest, index) => (
-            <li key={index} className="text-lg">
-              {priest}
-            </li>
-          ))}
-        </ul>
-      </section>
+            {sonOfSoils.map((priest, index) => (
+              <li key={index} className="lg:text-lg text-sm custom-shadow p-2 rounded-lg flex justify-between flex-col sm:flex-row">
+                {priest}
+              </li>
+            ))}
+          </ul>
+        </section>
 
-      <section>
-        <h2 className="text-2xl font-semibold mb-4">Deacons</h2>
-        <ul className="list-disc list-inside space-y-2">
-          {decons.map((decon, index) => (
-            <li key={index} className="text-lg">
-              <span className="font-medium">{decon.name}</span> ({decon.from} -{" "}
-              {decon.till})
-            </li>
-          ))}
-        </ul>
-      </section>
+        <section className=" lg:row-span-1 custom-shadow p-4 rounded-lg" >
+          <h2 className="text-2xl font-semibold mb-4">
+            Deacons
+          </h2>
+          <ul className=" list-inside space-y-2 ">
+
+            {decons.map((decon, index) => (
+              <li key={index} className="lg:text-lg text-sm custom-shadow p-2 rounded-lg flex justify-between flex-col sm:flex-row">
+                <span className="font-medium">{decon.name}</span> ({decon.from} -{" "}
+                {decon.till})
+              </li>
+            ))}
+          </ul>
+        </section>
+
+      </div>
+
     </div>
   );
 }
