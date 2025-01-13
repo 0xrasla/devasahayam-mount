@@ -110,7 +110,7 @@ function Gallery() {
 
           <TabsContent value="photos">
             <motion.div
-              className="grid w-full gap-4 grid-cols-1 grid-rows-2 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4  place-content-center place-items-center"
+              className="grid w-full gap-4 grid-cols-1 lg:grid-rows-3 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4  place-content-center place-items-center"
               initial="hidden"
               animate="visible"
               variants={{
@@ -125,11 +125,11 @@ function Gallery() {
                     hidden: { opacity: 0, y: 20 },
                     visible: { opacity: 1, y: 0 },
                   }}
-                  className={`overflow-hidden relative h-full  rounded-lg shadow-lg ${photo?.isPortrait ? "row-span-2" : ""} `}
+                  className={`overflow-hidden relative h-full  rounded-lg shadow-lg ${photo?.isPortrait ? "row-span-2" : "row-span-1"} `}
                 >
                   <img src={photo.src} alt={photo.desc} className="gallery-img h-full cursor-pointer object-cover" />
 
-                  <p className={`p-1 md:p-1 text-center absolute bg-white w-full h-1/2 hover:w-full opacity-0  img-desc ${photo?.isPortrait ? "hover:p-2" : ""}`} >{photo.desc}</p>
+                  <p className={`p-1 md:p-1 text-center absolute bg-white w-full h-4/5 md:h-1/2 hover:w-full opacity-0  img-desc ${photo?.isPortrait ? "hover:p-2" : ""}`} >{photo.desc}</p>
                 </motion.div>
               ))}
             </motion.div>
