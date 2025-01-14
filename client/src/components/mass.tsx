@@ -51,8 +51,8 @@ export default function MassSchedules() {
             Mass Schedule
           </h1>
           <p className="text-lg text-gray-600 mt-4">
-            Join us at Our Lady of Sorrows & Devasahayam Pillai Church for
-            moments of spiritual peace.
+            Join us at Our Lady of Sorrows & Devasahayam Church for moments of
+            spiritual peace.
           </p>
         </div>
 
