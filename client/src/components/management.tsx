@@ -1,15 +1,14 @@
-import React from "react";
+import { useNavigate } from "@tanstack/react-router";
+// @ts-ignore
 import Slider from "react-slick";
+import { Button } from "./ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "./ui/card";
-import { Button } from "./ui/button";
-import { useNavigate } from "@tanstack/react-router";
 
 export function FathersSection() {
   const navigate = useNavigate();
@@ -52,9 +51,8 @@ export function FathersSection() {
     },
   ];
 
-
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 4,
@@ -62,7 +60,6 @@ export function FathersSection() {
     autoplay: true,
     autoplaySpeed: 2000,
     responsive: [
-
       {
         breakpoint: 1024,
         settings: {
@@ -86,8 +83,10 @@ export function FathersSection() {
 
   return (
     <section id="visit" className="p-3 md:px-0  md:w-[90%] md:mx-auto mx-auto ">
-      <h2 className="text-[27px]  text-black font-bold  md:px-0 md:mx-auto mx-2 lg:mx-4 lg:px-0  py-2 ">Management</h2>
-      <Slider  {...settings}>
+      <h2 className="text-[27px]  text-black font-bold  md:px-0 md:mx-auto mx-2 lg:mx-4 lg:px-0  py-2 ">
+        Management
+      </h2>
+      <Slider {...settings}>
         {fathersInfo.map((father, index) => (
           <div key={index} className=" min-w-72  h-96 p-2 cursor-pointer">
             <Card className="  h-full bg-white border-none custom-shadow">
@@ -110,7 +109,6 @@ export function FathersSection() {
                   {father.desc || "Description not available."}
                 </CardDescription>
               </CardContent>
-
             </Card>
           </div>
         ))}
