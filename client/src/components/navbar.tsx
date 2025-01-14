@@ -32,10 +32,13 @@ export default function Navbar() {
     if (element) {
       element.scrollIntoView({
         behavior: "smooth",
-        block: "center",
+        block: "start",
+        inline: "nearest",
       });
     }
   };
+
+  const pathstoBlack = ["/gallery"];
 
   return (
     <nav
@@ -109,7 +112,7 @@ export default function Navbar() {
 
         <div className="gap-2 font-avenir hidden md:flex space-x-4">
           <Button
-            className={`capitalize bg-transparent h-[42px] font-bold w-[116px] hover:bg-transparent rounded-lg text-start ${isScrolled ? "text-accent" : "text-white"} border-[1px] border-accent text-[16px]`}
+            className={`capitalize bg-transparent h-[42px] font-bold w-[116px] hover:bg-transparent rounded-lg text-start ${window.location.pathname.includes("/gallery") || isScrolled ? "text-accent" : "text-white"} border-[1px] border-accent text-[16px]`}
           >
             Contact
           </Button>
@@ -117,13 +120,12 @@ export default function Navbar() {
             Donate
           </Button>
         </div>
-
         <div className="md:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <button className="focus:outline-none">
                 <MenuIcon
-                  className={`w-[30px] h-[30px] ${isScrolled ? "text-black" : "text-white"}`}
+                  className={`w-[30px] h-[30px] ${window.location.pathname.includes("/gallery") || isScrolled ? "text-black" : "text-white"}`}
                 />
               </button>
             </SheetTrigger>
@@ -165,7 +167,9 @@ export default function Navbar() {
                   Gallery
                 </button>
 
-                <Button className="capitalize mt-4 bg-transparent hover:bg-transparent w-full text-start text-accent border-[1px] border-accent">
+                <Button
+                  className={`capitalize mt-4 bg-transparent hover:bg-transparent w-full text-start text-accent border-[1px] border-accent ${window.location.pathname === "/gallery" ? "text-maincol" : ""}`}
+                >
                   Contact
                 </Button>
                 <Button className="capitalize w-full text-start bg-accent hover:bg-accent">

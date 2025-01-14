@@ -59,7 +59,10 @@ export default function Gallery() {
             );
           })}
         </div>
-        <Button
+
+      </div>
+      <div className="md:w-[90%] md:mx-auto mx-4 md:px-0 lg:px-0 py-2 ">
+      <Button
           onClick={() => {
             navigate({
               to: "/gallery",
@@ -70,6 +73,7 @@ export default function Gallery() {
           View more...
         </Button>
       </div>
+
     </section>
   );
 }

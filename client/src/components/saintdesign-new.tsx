@@ -1,6 +1,6 @@
 export default function SaintNewDesign() {
   return (
-    <div className="overflow-hidden  w-screen bg-white" id="home">
+    <div className="overflow-hidden  w-screen bg-white">
       <div className="w-full h-full">
         <div className="flex flex-col justify-center items-center text-center relative w-screen  h-screen ">
           <img
