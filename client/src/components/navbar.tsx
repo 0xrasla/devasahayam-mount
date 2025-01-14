@@ -7,7 +7,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { useNavigate } from "@tanstack/react-router";
+import { useLocation, useNavigate } from "@tanstack/react-router";
 import { MenuIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -16,6 +16,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navigate = useNavigate();
+  const location=useLocation()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,7 +39,12 @@ export default function Navbar() {
     }
   };
 
-  const pathstoBlack = ["/gallery"];
+  useEffect(()=>{
+
+  },[])
+
+
+  const pathstoBlack = ["/gallery","/fathers"];
 
   return (
     <nav

@@ -16,40 +16,48 @@ export function FathersSection() {
   const fathersInfo = [
     {
       name: "Rev.Fr. S. Leon Henson",
-      desc: "A brief description about Rev.Fr. S. Leon Henson.",
-      img: "https://i.ibb.co/DWr70FP/Whats-App-Image-2025-01-12-at-08-35-34.jpg",
+      desc: "Parish Priest",
+      img: "https://i.ibb.co/dPQ8DqW/Whats-App-Image-2025-01-14-at-08-53-56.jpg",
+      bio: "Rev. Fr. S. Leon Henson serves as the dedicated Parish Priest, leading the congregation with spiritual guidance and pastoral care."
     },
     {
       name: "Rev.Fr. J. Saleen Johnrose",
-      desc: "A brief description about Rev.Fr. J. Saleen Johnrose.",
-      img: "https://i.ibb.co/DWr70FP/Whats-App-Image-2025-01-12-at-08-35-34.jpg",
+      desc: "Assistant Parish Priest",
+      img: "https://i.ibb.co/Nxn63s4/IMG-20250112-WA0000-1.jpg",
+      bio: "Rev. Fr. J. Saleen Johnrose is the Assistant Parish Priest, supporting the parish community through ministry and service."
     },
     {
       name: "Rev.Fr. Ravi",
-      desc: "A brief description about Rev.Fr. Ravi.",
-      img: "https://i.ibb.co/DWr70FP/Whats-App-Image-2025-01-12-at-08-35-34.jpg",
+      desc: "Assistant Parish Priest",
+      img: "https://i.ibb.co/F4FYRbR/IMG-20250114-WA0061-2.jpg",
+      bio: "Rev. Fr. Ravi serves as an Assistant Parish Priest, fostering spiritual growth and assisting in parish activities."
     },
     {
       name: "Dn. Yesu Pravin",
-      desc: "A brief description about Dn. Yesu Pravin.",
-      img: "https://i.ibb.co/DWr70FP/Whats-App-Image-2025-01-12-at-08-35-34.jpg",
+      desc: "Deacon",
+      img: "https://i.ibb.co/VvR6PpV/IMG-20250114-WA0058.jpg",
+      bio: "Dn. Yesu Pravin is a devoted Deacon, dedicated to serving the parish and supporting its spiritual mission."
     },
     {
-      name: "Rev.Fr. J. Saleen Johnrose",
-      desc: "A brief description about Rev.Fr. J. Saleen Johnrose.",
-      img: "https://i.ibb.co/DWr70FP/Whats-App-Image-2025-01-12-at-08-35-34.jpg",
+      name: "Mr. Siluvai Dhasan",
+      desc: "Vice President",
+      img: "https://i.ibb.co/ZMqTFqm/Whats-App-Image-2025-01-14-at-13-04-55.jpg",
+      bio: "Mr. Siluvai Dhasan is the Vice President of the parish council, ensuring effective administration and community engagement."
     },
     {
-      name: "Rev.Fr. Ravi",
-      desc: "A brief description about Rev.Fr. Ravi.",
-      img: "https://i.ibb.co/DWr70FP/Whats-App-Image-2025-01-12-at-08-35-34.jpg",
+      name: "Mr. David",
+      desc: "Secretary",
+      img: "https://i.ibb.co/YP1MMKL/IMG-20250114-WA0059.jpg",
+      bio: "Mr. David serves as the Secretary, overseeing communications and ensuring smooth coordination of parish activities."
     },
     {
-      name: "Dn. Yesu Pravin",
-      desc: "A brief description about Dn. Yesu Pravin.",
-      img: "https://i.ibb.co/DWr70FP/Whats-App-Image-2025-01-12-at-08-35-34.jpg",
-    },
+      name: "Janate",
+      desc: "Treasurer",
+      img: "avatar1.png",
+      bio: "Janate is the Treasurer, responsible for managing the parish's finances and ensuring transparency in fiscal matters."
+    }
   ];
+  
 
   const settings = {
     dots: false,
@@ -58,7 +66,7 @@ export function FathersSection() {
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000,
     responsive: [
       {
         breakpoint: 1024,
@@ -91,12 +99,12 @@ export function FathersSection() {
           <div key={index} className=" min-w-72  h-96 p-2 cursor-pointer">
             <Card className="  h-full bg-white border-none custom-shadow">
               <CardHeader>
-                <CardTitle>{father.name}</CardTitle>
+                <CardTitle>{father.name}</CardTitle> <span> {father.desc} </span>
                 {father.img ? (
                   <img
                     src={father.img}
                     alt={father.name}
-                    className="w-full h-48 object-contain bg-white rounded-lg mt-2"
+                    className="w-full h-48 object-cover  bg-white rounded-lg mt-2  "
                   />
                 ) : (
                   <div className="w-full h-48 flex items-center justify-center bg-muted rounded-lg">
@@ -106,7 +114,7 @@ export function FathersSection() {
               </CardHeader>
               <CardContent>
                 <CardDescription>
-                  {father.desc || "Description not available."}
+                  {father.bio || "Description not available."}
                 </CardDescription>
               </CardContent>
             </Card>
@@ -119,7 +127,7 @@ export function FathersSection() {
             to: "/fathers",
           });
         }}
-        className="capitalize font-bold text-start h-[42px] w-[116px] bg-accent hover:bg-white text-[16px] rounded-lg  cursor-pointer hover:text-accent border hover:border-accent mt-7 md:mt-4 "
+        className="capitalize font-bold text-start h-[42px] w-[116px] bg-accent hover:bg-white text-[16px] rounded-lg  cursor-pointer hover:text-accent border hover:border-accent mt-7 md:mt-4 ml-[5px]"
       >
         View more...
       </Button>

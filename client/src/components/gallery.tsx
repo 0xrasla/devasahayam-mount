@@ -6,11 +6,11 @@ export default function Gallery() {
   const images = [
     { src: "1.jpg", alt: "Maniyadichan Parai" },
     { src: "2.jpg", alt: "Maniyadichan Parai" },
-    { src: "5.jpg", alt: "Maniyadichan Parai" },
+    { src: "https://i.ibb.co/TgRWhnh/DSC08995.jpg", alt: "Maniyadichan Parai" },
     { src: "4.jpg", alt: "Maniyadichan Parai" },
     { src: "5.jpg", alt: "Maniyadichan Parai" },
-    { src: "4.jpg", alt: "Maniyadichan Parai" },
-    { src: "1.jpg", alt: "Maniyadichan Parai" },
+    { src: "https://i.ibb.co/wpjKdsg/DSC09001.jpg", alt: "Maniyadichan Parai" },
+    { src: "https://i.ibb.co/vq5CpNz/Whats-App-Image-2025-01-10-at-11-57-03-PM.jpg", alt: "Maniyadichan Parai" },
   ];
 
   return (
@@ -55,7 +55,10 @@ export default function Gallery() {
             );
           })}
         </div>
-        <Button
+
+      </div>
+      <div className="md:w-[90%] md:mx-auto mx-4 md:px-0 lg:px-0 py-2 ">
+      <Button
           onClick={() => {
             navigate({
               to: "/gallery",
@@ -66,6 +69,7 @@ export default function Gallery() {
           View more...
         </Button>
       </div>
+
     </section>
   );
 }

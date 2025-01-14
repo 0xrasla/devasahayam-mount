@@ -8,71 +8,7 @@ import {
 } from "./ui/card";
 
 export default function MassTimings() {
-  const massData = [
-    {
-      title: "Daily Mass",
-      description:
-        "Daily Mass is held at the shrine at various timings to accommodate all visitors.",
-      days: ["Monday", "Tuesday", "Wednesday", "Thursday"],
-      timings: ["Morning: 6:00 AM", "Evening: 6:30 PM"],
-    },
-    {
-      title: "Friday Masses",
-      description:
-        "Friday Mass is held at the shrine at various timings to accommodate all visitors.",
-      timings: [
-        "Morning: 6:00 AM Mass",
-        "Morning: 10:30 AM Sebamalai",
-        "Morning 11:00 AM Naveena Mass",
-        "Evening 6:30 PM Mass",
-      ],
-    },
-    {
-      title: "Saturday Masses",
-      description:
-        "Saturday Masses are held at the shrine at various timings to accommodate all visitors.",
-      timings: [
-        "Morning: 6:00 AM Mass",
-        "Morning 11:00 AM Naveena Mass",
-        "Evening 6:30 PM Mass",
-        "Night 8:00 PM from 9:00 PM",
-      ],
-      extraDetails: [
-        "Martyr Devasahayam Arulurai",
-        "Thirupanda Vanakkam",
-        "Thirupugalmalai Yezunthetram",
-      ],
-    },
-    {
-      title: "Sunday Masses",
-      description:
-        "Sunday Masses are held at the shrine at various timings to accommodate all visitors.",
-      timings: [
-        "Morning: 5:00 AM Mass",
-        "Morning 7:00 AM Mass",
-        "Afternoon 12:00 PM (for Passengers)",
-        "Evening 05:30 PM Mass",
-        "Night 8:00 PM from 9:00 PM",
-      ],
-      extraDetails: [
-        "Martyr Devasahayam Arulurai",
-        "Thirupanda Vanakkam",
-        "Thirupugalmalai Yezunthetram",
-      ],
-    },
-    {
-      title: "Special Days",
-      description:
-        "Special days Masses are held at the shrine at various timings to accommodate all visitors.",
-      specialEvents: [
-        "Every Month at 14'th * Malai Vazham. Evening 6:00 PM Mass",
-        "First Tuesday - Punitha Anthoniyar Savadi",
-        "First Wednesday - Old Church",
-        "First Friday - Martyr. Devasahayam Sathukkam",
-        "First Saturday - Siraichalai",
-      ],
-    },
-  ];
+
 
   return (
     <section id="masstimings" className="bg-white mx-auto w-[99%] md:w-[90%]">
@@ -83,7 +19,7 @@ export default function MassTimings() {
 
         <div>
           <p className="text-[16px] md:text-[18px] py-2">
-            Join us for daily and special Masses at the shrine. Our Masses are
+            Join us for daily and special Mass at the shrine. Our Mass are
             held at various timings to accommodate all visitors.
           </p>
 
@@ -142,10 +78,10 @@ export default function MassTimings() {
             <Card className="bg-white p-2 rounded-lg border-2 border-maincol">
               <CardHeader>
                 <CardTitle className="text-2xl font-semibold">
-                  Saturday Masses
+                  Saturday Mass
                 </CardTitle>
                 <CardDescription className="text-lg text-gray-600">
-                  Saturday Masses at the shrine are held at various intervals,
+                  Saturday Mass at the shrine are held at various intervals,
                   offering visitors ample opportunities to join in prayer and
                   spiritual reflection.
                 </CardDescription>
@@ -178,10 +114,10 @@ export default function MassTimings() {
             <Card className="bg-white p-2 rounded-lg border-2 border-maincol">
               <CardHeader>
                 <CardTitle className="text-2xl font-semibold">
-                  Sunday Masses
+                  Sunday Mass
                 </CardTitle>
                 <CardDescription className="text-lg text-gray-600">
-                  Sunday Masses at the shrine are celebrated at different times,
+                  Sunday Mass at the shrine are celebrated at different times,
                   welcoming all visitors to participate in prayer and spiritual
                   devotion.
                 </CardDescription>
@@ -220,7 +156,7 @@ export default function MassTimings() {
                   Special Days
                 </CardTitle>
                 <CardDescription className="text-lg text-gray-600">
-                  Special Masses are held at the shrine on various dates each
+                  Special Mass are held at the shrine on various dates each
                   month, ensuring all visitors have the opportunity to
                   participate.
                 </CardDescription>

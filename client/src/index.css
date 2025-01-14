@@ -163,7 +163,7 @@ body {
 .gallery-img:hover ~ .img-desc {
   opacity: 1;
   transition: all 1s ease-in-out;
-  transform: translateY(-60%);
+  transform: translateY(-80%);
 }
 
 .custom-shadow{
