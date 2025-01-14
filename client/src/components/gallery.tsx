@@ -6,11 +6,11 @@ export default function Gallery() {
   const images = [
     { src: "1.jpg", alt: "Maniyadichan Parai" },
     { src: "2.jpg", alt: "Maniyadichan Parai" },
-    { src: "5.jpg", alt: "Maniyadichan Parai" },
+    { src: "https://i.ibb.co/TgRWhnh/DSC08995.jpg", alt: "Maniyadichan Parai" },
     { src: "4.jpg", alt: "Maniyadichan Parai" },
     { src: "5.jpg", alt: "Maniyadichan Parai" },
-    { src: "4.jpg", alt: "Maniyadichan Parai" },
-    { src: "1.jpg", alt: "Maniyadichan Parai" },
+    { src: "https://i.ibb.co/wpjKdsg/DSC09001.jpg", alt: "Maniyadichan Parai" },
+    { src: "https://i.ibb.co/vq5CpNz/Whats-App-Image-2025-01-10-at-11-57-03-PM.jpg", alt: "Maniyadichan Parai" },
   ];
 
   return (
