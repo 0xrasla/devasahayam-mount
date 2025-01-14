@@ -15,7 +15,7 @@ export default function Hero() {
   ];
 
   const getMediaDuration = () =>
-    bgMedia[bgIndex].type === "image" ? 5000 : 30000;
+    bgMedia[bgIndex].type === "image" ? 6000 : 30000;
 
   useInterval(
     () => {

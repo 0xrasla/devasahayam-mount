@@ -30,9 +30,14 @@ export default function Footer() {
                   </a>
                 </span>
               </div>
-              <div className="flex items-start">
-                <MapPin size={20} className="mr-2 mt-1" />
-                <span>Devesahayamount, Tamil Nadu, India</span>
+              <div className="">
+                <a
+                  className="flex items-start"
+                  href={`https://www.google.com/maps/dir/?api=1&origin=Current+Location&destination=${8.240166189309809},${77.52512889748944}&travelmode=driving`}
+                >
+                  <MapPin size={20} className="mr-2 mt-1" />
+                  <span>Devesahayamount, Tamil Nadu, India</span>
+                </a>
               </div>
             </div>
           </div>
