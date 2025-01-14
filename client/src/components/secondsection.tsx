@@ -12,14 +12,13 @@ export default function SecondDesign() {
 
   const slides = [
     {
-      image: width < 768 ? "/marie.jpg" : "/hero.jpg",
+      image: width < 768 ? "/marie.jpeg" : "/hero.jpg",
       title: "Our Lady of Sorrows",
       description:
         "Our Lady of Sorrows embodies the profound strength and compassion of Mary as she endured immense grief during the suffering and crucifixion of Jesus, inspiring faith, empathy, and hope in times of hardship.",
     },
     {
-      image:
-        width < 768 ? "/assets/devasahayampillai.jpg" : "/hero-desktop.jpg",
+      image: width < 768 ? "/devasahayam.jpeg" : "/hero-desktop.jpg",
       title: "St. Devasahayam",
       description:
         "St. Devasahayam, a fearless martyr and saint, dedicated his life to spreading Christianity in 18th-century India, despite facing persecution and hardship. His unwavering faith and sacrifice continue to inspire countless believers around the world.",

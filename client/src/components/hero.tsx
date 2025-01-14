@@ -46,12 +46,12 @@ export default function Hero() {
 
   const settings = {
     infinite: true,
-    speed: 500,
+    speed: 900,
     slidesToShow: 1,
     slidesToScroll: 1,
     swipeToSlide: true,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 4000,
     pauseOnHover: false,
     arrows: false,
     nextArrow: <NextArrow />,
@@ -110,20 +110,31 @@ export default function Hero() {
 
         <div className="w-[400px] md:w-[600px] relative hidden md:block">
           <Slider {...settings}>
-            {["NmOh2xDfTSU", "1uDfq0zVK04"].map((videoId, index) => (
+            {[
+              {
+                id: "YMP5kZmEXLs",
+                content:
+                  "மறைசாட்சி புனித தேவசகாயம் பெருவிழா, தேவசகாயம் மவுண்ட் | 2 ஆம் திருவிழா திருப்பலி | 13-1-2025",
+              },
+              {
+                id: "Tnlk4COkDp0",
+                content:
+                  "மறைசாட்சி புனித தேவசகாயம் பெருவிழா, தேவசகாயம் மவுண்ட் | 1 ஆம் திருவிழா திருப்பலி | 12-1-2025",
+              },
+            ].map((video, index) => (
               <div key={index} className="relative p-4">
                 <iframe
                   className="rounded-lg"
                   width={calculatedWidth}
                   height={calculatedHeight}
-                  src={`https://www.youtube.com/embed/${videoId}?si=fjtpdzJEFGy0Ga4a`}
+                  src={`https://www.youtube.com/embed/${video.id}?si=fjtpdzJEFGy0Ga4a`}
                   title="YouTube video player"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
                 ></iframe>
                 <h2 className="text-white text-2xl text-center mt-4">
-                  2024 Mass
+                  {video.content}
                 </h2>
               </div>
             ))}

@@ -9,7 +9,10 @@ export default function Address() {
             Address & Location
           </h1>
 
-          <div className="flex flex-col md:flex-row gap-4 md:gap-6">
+          <div
+            className="flex flex-col md:flex-row gap-4 md:gap-6"
+            onClick={() => openGoogleMap()}
+          >
             <div className="relative h-[300px] rounded-2xl overflow-hidden mb-2 md:mb-0">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4817.531127843961!2d77.52254607579195!3d8.24015480083626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b04f4fcf3e739c9%3A0xc5b5099a4ba140a7!2sOur%20Lady%20of%20Sorrows%20Church!5e1!3m2!1sen!2sin!4v1735323814551!5m2!1sen!2sin"
