@@ -73,7 +73,10 @@ export default function Hero() {
   const { calculatedWidth, calculatedHeight } = getIframeDimensions();
 
   return (
-    <div className="h-screen bg-transparent w-full relative overflow-hidden">
+    <div
+      className="h-screen bg-transparent w-full relative overflow-hidden"
+      id="home"
+    >
       {bgImages.map(
         (image, index) =>
           index === bgIndex && (
