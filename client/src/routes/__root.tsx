@@ -2,18 +2,25 @@ import Navbar from "@/components/navbar";
 import { Outlet, createRootRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 
-const LoadingBar = ({ progress }: { progress: number }) => (
+const LoadingScreen = ({ progress }: { progress: number }) => (
   <div
     style={{
       position: "fixed",
       top: 0,
       left: 0,
-      width: `${progress}%`,
-      height: "5px",
-      backgroundColor: "#4caf50",
+      width: "100%",
+      height: "100%",
+      backgroundColor: "#fff",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      flexDirection: "column",
       zIndex: 9999,
     }}
-  />
+  >
+    <img src="/logo.png" alt="Logo" style={{ width: "100px" }} />
+    <p>{progress}%</p>
+  </div>
 );
 
 export const Route = createRootRoute({
@@ -29,14 +36,15 @@ function RootComponent() {
 
   useEffect(() => {
     const images = Array.from(document.images);
-    let loadedImages = 0;
-    const totalImages = images.length;
+    const videos = Array.from(document.getElementsByTagName("video"));
+    const totalMedia = images.length + videos.length;
+    let loadedMedia = 0;
 
     const updateProgress = () => {
-      loadedImages += 1;
-      setProgress(Math.round((loadedImages / totalImages) * 100));
+      loadedMedia += 1;
+      setProgress(Math.round((loadedMedia / totalMedia) * 100));
 
-      if (loadedImages === totalImages) {
+      if (loadedMedia === totalMedia) {
         setLoading(false);
       }
     };
@@ -49,30 +57,28 @@ function RootComponent() {
         image.onerror = updateProgress;
       }
     });
+
+    videos.forEach((video) => {
+      if (video.readyState >= 3) {
+        updateProgress();
+      } else {
+        video.onloadeddata = updateProgress;
+        video.onerror = updateProgress;
+      }
+    });
+
+    if (totalMedia === 0) setLoading(false);
   }, []);
 
   return (
     <>
-      {loading && (
-        <>
-          <div
-            style={{
-              position: "fixed",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-              zIndex: 9999,
-            }}
-          >
-            <img src="/logo.png" alt="Logo" />
-          </div>
-          <LoadingBar progress={progress} />
-        </>
+      {loading && <LoadingScreen progress={progress} />}
+      {!loading && (
+        <div>
+          <Navbar />
+          <Outlet />
+        </div>
       )}
-      <div>
-        <Navbar />
-        <Outlet />
-      </div>
     </>
   );
 }
