@@ -112,6 +112,12 @@ export default function Navbar() {
           >
             Contact
           </Button>
+
+          <Button
+            className={`capitalize bg-transparent border-2 h-[42px] font-bold w-[116px] hover:bg-transparent rounded-lg text-start ${window.location.pathname.includes("/gallery") || isScrolled ? "text-accent" : "text-white"} border-[1px] border-accent text-[16px]`}
+          >
+            Book Mass
+          </Button>
         </div>
         <div className="md:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -161,9 +167,15 @@ export default function Navbar() {
                 </button>
 
                 <Button
-                  className={`capitalize mt-4 bg-transparent hover:bg-transparent w-full text-start text-accent border-[1px] border-accent ${window.location.pathname === "/gallery" ? "text-maincol" : ""}`}
+                  className={`capitalize mt-4 bg-transparent hover:bg-transparent w-full font-bold text-start text-accent border-[1px] border-accent ${window.location.pathname === "/gallery" ? "text-maincol" : ""}`}
                 >
                   Contact
+                </Button>
+
+                <Button
+                  className={`capitalize mt-4 bg-maincol hover:bg-maincol w-full text-start text-white font-bold border-[1px] border-accent ${window.location.pathname === "/gallery" ? "text-maincol" : ""}`}
+                >
+                  Book a Mass
                 </Button>
               </div>
             </SheetContent>
