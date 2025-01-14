@@ -15,7 +15,7 @@ export default function Hero() {
   ];
 
   const getMediaDuration = () =>
-    bgMedia[bgIndex].type === "image" ? 5000 : 30000;
+    bgMedia[bgIndex].type === "image" ? 3000 : 30000;
 
   useInterval(
     () => {
@@ -111,17 +111,17 @@ export default function Hero() {
               <div key={index} className="relative p-4">
                 <iframe
                   className="rounded-lg"
-                  height={315}
-                  width={560}
+                  height={255}
+                  width={460}
                   src={`https://www.youtube.com/embed/${video.id}?si=fjtpdzJEFGy0Ga4a`}
                   title="YouTube video player"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
                 ></iframe>
-                <h2 className="text-white text-2xl text-center mt-4">
+                {/* <h2 className="text-white text-2xl text-center mt-4">
                   {video.content}
-                </h2>
+                </h2> */}
               </div>
             ))}
           </Slider>

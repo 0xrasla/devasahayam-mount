@@ -53,7 +53,7 @@ export function FathersSection() {
     {
       name: "Janate",
       desc: "Treasurer",
-      img: "https://i.ibb.co/DWr70FP/Whats-App-Image-2025-01-12-at-08-35-34.jpg",
+      img: "avatar1.png",
       bio: "Janate is the Treasurer, responsible for managing the parish's finances and ensuring transparency in fiscal matters."
     }
   ];

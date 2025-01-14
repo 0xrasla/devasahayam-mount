@@ -129,54 +129,17 @@ const photos: Photo[] = [
   },
 ];
 
-const videos = [
-  { src: "hero.mp4", desc: "Travel highlights." },
-  { src: "hero.mp4", desc: "City timelapse." },
-  { src: "hero.mp4", desc: "Nature exploration." },
-  { src: "hero.mp4", desc: "Travel highlights." },
-  { src: "hero.mp4", desc: "City timelapse." },
-  { src: "hero.mp4", desc: "Nature exploration." },
-  { src: "hero.mp4", desc: "Travel highlights." },
-  { src: "hero.mp4", desc: "City timelapse." },
-  { src: "hero.mp4", desc: "Nature exploration." },
-];
+
 const youtubeVideos = [
   {
-    src: "https://www.youtube.com/embed/NmOh2xDfTSU?si=fjtpdzJEFGy0Ga4a",
+    src: "https://www.youtube.com/embed/YMP5kZmEXLs?si=fjtpdzJEFGy0Ga4a",
     desc: "Travel highlights.",
   },
   {
-    src: "https://www.youtube.com/embed/NmOh2xDfTSU?si=fjtpdzJEFGy0Ga4a",
+    src: "https://www.youtube.com/embed/Tnlk4COkDp0?si=fjtpdzJEFGy0Ga4a",
     desc: "City timelapse.",
   },
-  {
-    src: "https://www.youtube.com/embed/NmOh2xDfTSU?si=fjtpdzJEFGy0Ga4a",
-    desc: "Nature exploration.",
-  },
-  {
-    src: "https://www.youtube.com/embed/NmOh2xDfTSU?si=fjtpdzJEFGy0Ga4a",
-    desc: "Travel highlights.",
-  },
-  {
-    src: "https://www.youtube.com/embed/NmOh2xDfTSU?si=fjtpdzJEFGy0Ga4a",
-    desc: "City timelapse.",
-  },
-  {
-    src: "https://www.youtube.com/embed/NmOh2xDfTSU?si=fjtpdzJEFGy0Ga4a",
-    desc: "Nature exploration.",
-  },
-  {
-    src: "https://www.youtube.com/embed/NmOh2xDfTSU?si=fjtpdzJEFGy0Ga4a",
-    desc: "Travel highlights.",
-  },
-  {
-    src: "https://www.youtube.com/embed/NmOh2xDfTSU?si=fjtpdzJEFGy0Ga4a",
-    desc: "City timelapse.",
-  },
-  {
-    src: "https://www.youtube.com/embed/NmOh2xDfTSU?si=fjtpdzJEFGy0Ga4a",
-    desc: "Nature exploration.",
-  },
+
 ];
 
 interface Photo {
@@ -228,12 +191,7 @@ function Gallery() {
             >
               Videos
             </TabsTrigger>
-            <TabsTrigger
-              className="font-bold font-avenir cursor-pointer"
-              value="youtube"
-            >
-              YouTube
-            </TabsTrigger>
+
           </TabsList>
 
           <TabsContent value="photos" className="mt-8">
@@ -268,35 +226,7 @@ function Gallery() {
           </TabsContent>
 
           <TabsContent value="videos">
-            <motion.div
-              className="grid w-full gap-4 grid-cols-1  sm:grid-cols-2   md:grid-cols-3 lg:grid-cols-4 place-content-center place-items-center"
-              initial="hidden"
-              animate="visible"
-              variants={{
-                hidden: { opacity: 0 },
-                visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
-              }}
-            >
-              {videos.map((video, index) => (
-                <motion.div
-                  key={index}
-                  variants={{
-                    hidden: { opacity: 0, y: 20 },
-                    visible: { opacity: 1, y: 0 },
-                  }}
-                  className="overflow-hidden rounded-lg shadow-lg"
-                >
-                  <video controls className="w-full">
-                    <source src={video.src} type="video/mp4" />
-                  </video>
-                  <p className="p-2 text-center">{video.desc}</p>
-                </motion.div>
-              ))}
-            </motion.div>
-          </TabsContent>
-
-          <TabsContent value="youtube">
-            <motion.div
+          <motion.div
               className="grid w-full gap-4 grid-cols-1  sm:grid-cols-2   md:grid-cols-3 lg:grid-cols-4 place-content-center place-items-center"
               initial="hidden"
               animate="visible"
@@ -325,6 +255,8 @@ function Gallery() {
               ))}
             </motion.div>
           </TabsContent>
+
+
         </Tabs>
       </div>
     </div>
