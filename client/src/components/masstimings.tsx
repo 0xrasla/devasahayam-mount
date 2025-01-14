@@ -88,7 +88,7 @@ export default function MassTimings() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
-            <Card className="bg-white p-2 shadow-2xl rounded-lg border-2 border-maincol">
+            <Card className="bg-white p-2 rounded-lg border-2 border-maincol">
               <CardHeader>
                 <CardTitle className="text-2xl font-semibold">
                   Daily Mass
@@ -99,61 +99,73 @@ export default function MassTimings() {
                 </CardDescription>
               </CardHeader>
 
-              <CardContent className="flex gap-6 items-start mt-4">
+              <CardContent className="flex flex-col gap-6 items-start mt-4">
                 <div className="flex flex-col gap-3 text-lg font-bold">
-                  <p>Monday</p>
-                  <p>Tuesday</p>
-                  <p>Wednesday</p>
-                  <p>Thursday</p>
+                  <p>Monday - Thursday</p>
                 </div>
 
-                <div className="flex flex-col gap-3 text-lg font-medium text-gray-700 self-center">
+                <div className="flex flex-col gap-3 text-lg font-medium text-gray-700">
                   <p>Morning: 6:00 AM</p>
                   <p>Evening: 6:30 PM</p>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="bg-white p-2 shadow-2xl rounded-lg border-2 border-maincol">
+            <Card className="bg-white p-2 rounded-lg border-2 border-maincol">
               <CardHeader>
                 <CardTitle className="text-2xl font-semibold">
-                  Friday Masses
+                  Friday Mass
                 </CardTitle>
                 <CardDescription className="text-lg text-gray-600">
-                  Friday Mass is held at the shrine at various timings to
-                  accommodate all visitors.
+                  Friday Mass at the shrine is offered at multiple times,
+                  ensuring all visitors have the opportunity to participate.
                 </CardDescription>
               </CardHeader>
 
               <CardContent className="flex gap-6 items-start mt-4">
                 <div className="flex flex-col gap-3 text-lg font-medium text-gray-700 self-center">
-                  <p>Morning: 6:00 AM Mass</p>
-                  <p>Morning: 10:30 AM Sebamalai</p>
-                  <p>Morning 11:00 AM Naveena Mass</p>
-                  <p>Evening 6:30 PM Mass</p>
+                  <p>
+                    <b>Morning</b> 6:00 AM Mass
+                  </p>
+                  <p>
+                    <b>Morning</b> 10:30 AM Rosary
+                  </p>
+                  <p>
+                    <b>Morning</b> 11:00 AM Novena Mass
+                  </p>
+                  <p>
+                    <b>Evening</b> 6:30 PM Mass
+                  </p>
                 </div>
               </CardContent>
             </Card>
-            <Card className="bg-white p-2 shadow-2xl rounded-lg border-2 border-maincol">
+            <Card className="bg-white p-2 rounded-lg border-2 border-maincol">
               <CardHeader>
                 <CardTitle className="text-2xl font-semibold">
                   Saturday Masses
                 </CardTitle>
                 <CardDescription className="text-lg text-gray-600">
-                  Saturday Masss are held at the shrine at various timings to
-                  accommodate all visitors.
+                  Saturday Masses at the shrine are held at various intervals,
+                  offering visitors ample opportunities to join in prayer and
+                  spiritual reflection.
                 </CardDescription>
               </CardHeader>
 
               <CardContent className="flex gap-6 items-start mt-4">
                 <div className="flex flex-col gap-3 text-lg font-medium text-gray-700 self-center">
-                  <p>Morning: 6:00 AM Mass</p>
-                  <p>Morning 11:00 AM Naveena Mass</p>
-                  <p>Evening 6:30 PM Mass</p>
+                  <p>
+                    <b>Morning</b> 6:00 AM Mass
+                  </p>
+                  <p>
+                    <b>Mornings</b> 11:00 AM Novena Mass
+                  </p>
+                  <p>
+                    <b>Evening</b> 6:30 PM Mass
+                  </p>
 
                   <div>
                     <b className="font-bold">Night 8:00 PM from 9:00 PM</b>
-                    <ol className="px-4 list-disc space-y-3">
+                    <ol className="px-4 list-disc space-y-3 mt-2">
                       <li>Martyr Devasahayam Arulurai</li>
                       <li>Thirupanda Vanakkam</li>
                       <li>Thirupugalmalai Yezunthetram</li>
@@ -163,27 +175,36 @@ export default function MassTimings() {
               </CardContent>
             </Card>
 
-            <Card className="bg-white p-2 shadow-2xl rounded-lg border-2 border-maincol">
+            <Card className="bg-white p-2 rounded-lg border-2 border-maincol">
               <CardHeader>
                 <CardTitle className="text-2xl font-semibold">
                   Sunday Masses
                 </CardTitle>
                 <CardDescription className="text-lg text-gray-600">
-                  Sunday Masss are held at the shrine at various timings to
-                  accommodate all visitors.
+                  Sunday Masses at the shrine are celebrated at different times,
+                  welcoming all visitors to participate in prayer and spiritual
+                  devotion.
                 </CardDescription>
               </CardHeader>
 
               <CardContent className="flex gap-6 items-start mt-4">
                 <div className="flex flex-col gap-3 text-lg font-medium text-gray-700 self-center">
-                  <p>Morning: 5:00 AM Mass</p>
-                  <p>Morning 7:00 AM Mass</p>
-                  <p>Afternoon 12:00 PM (for Passengers)</p>
-                  <p>Evening 05:30 PM Mass</p>
+                  <p>
+                    <b>Morning</b> 5:00 AM Mass
+                  </p>
+                  <p>
+                    <b>Morning</b> 7:00 AM Mass
+                  </p>
+                  <p>
+                    <b>Afternoon</b> 12:00 PM (for Sacred Pilgrims)
+                  </p>
+                  <p>
+                    <b>Evening</b> 05:30 PM Mass
+                  </p>
 
                   <div>
                     <b className="font-bold">Night 8:00 PM from 9:00 PM</b>
-                    <ol className="px-4 list-disc space-y-3">
+                    <ol className="px-4 list-disc space-y-3 mt-2">
                       <li>Martyr Devasahayam Arulurai</li>
                       <li>Thirupanda Vanakkam</li>
                       <li>Thirupugalmalai Yezunthetram</li>
@@ -193,14 +214,15 @@ export default function MassTimings() {
               </CardContent>
             </Card>
 
-            <Card className="bg-white p-2 shadow-2xl rounded-lg border-2 border-maincol">
+            <Card className="bg-white p-2 rounded-lg border-2 border-maincol">
               <CardHeader>
                 <CardTitle className="text-2xl font-semibold">
                   Special Days
                 </CardTitle>
                 <CardDescription className="text-lg text-gray-600">
-                  Sunday Masss are held at the shrine at various timings to
-                  accommodate all visitors.
+                  Special Masses are held at the shrine on various dates each
+                  month, ensuring all visitors have the opportunity to
+                  participate.
                 </CardDescription>
               </CardHeader>
 
@@ -208,13 +230,21 @@ export default function MassTimings() {
                 <div className="flex flex-col gap-3 text-lg font-medium text-gray-700 self-center">
                   <ul className="list-disc space-y-3">
                     <li>
-                      Every Month at 14'th
-                      <b>* Malai Vazham</b>. Evening 6:00 PM Mass
+                      On the 14th of every month,
+                      <b>* Malai Vazham</b> – Evening Mass at 6:00 PM
                     </li>
-                    <li>First Tuesday - Punitha Anthoniyar Savadi</li>
+                    <li>First Tuesday - St. Antony's Grotto</li>
                     <li>First Wednesday - Old Church</li>
-                    <li>First Friday - Martyr. Devasahayam Sathukkam</li>
-                    <li>First Saturday - Siraichalai</li>
+                    <li>First Friday - Deva Square</li>
+                    <li>
+                      First Saturday -{" "}
+                      <a
+                        href="https://en.wikipedia.org/wiki/Devasahayam_Pillais"
+                        target="_blank"
+                      >
+                        Devasahayam Prison
+                      </a>
+                    </li>
                   </ul>
                 </div>
               </CardContent>

@@ -25,8 +25,8 @@ export default function Footer() {
               <div className="flex items-center">
                 <MailIcon size={20} className="mr-2" />
                 <span>
-                  <a href="mailto:devasahayammount.web@gmail.com">
-                    devasahayammount.web@gmail.com
+                  <a href="mailto:devasahayammountshrine@gmail.com">
+                    devasahayammountshrine@gmail.com
                   </a>
                 </span>
               </div>

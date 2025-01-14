@@ -15,7 +15,7 @@ function RouteComponent() {
         {/* Heading Section */}
         <div className="text-center mb-20">
           <h2 className="text-5xl font-bold mb-6 text-gray-900 font-outfit">
-            The Life & Legacy of Saint Devasahayam Pillai
+            The Life & Legacy of Saint Devasahayam
           </h2>
           <p className="text-xl text-gray-600">
             India's First Lay Catholic Saint, a beacon of faith, courage, and
@@ -31,11 +31,11 @@ function RouteComponent() {
             </h3>
             <p className="text-lg text-gray-600 leading-relaxed">
               Born in 1712 in Nattalam, in the southern part of India,
-              Devasahayam Pillai was born as Neelakandan. He served as a soldier
-              in the royal palace of Travancore. Raised in a Hindu family, he
-              was influenced by the culture and traditions of the region.
-              Despite his humble beginnings, he achieved great prominence in the
-              royal court due to his dedication and talent.
+              Devasahayam was born as Neelakandan. He served as a soldier in the
+              royal palace of Travancore. Raised in a Hindu family, he was
+              influenced by the culture and traditions of the region. Despite
+              his humble beginnings, he achieved great prominence in the royal
+              court due to his dedication and talent.
             </p>
           </div>
 
@@ -110,12 +110,11 @@ function RouteComponent() {
             A Saint for All Time
           </h3>
           <p className="text-lg text-gray-600 leading-relaxed">
-            Saint Devasahayam Pillai's extraordinary journey of faith, courage,
-            and martyrdom has made him an eternal symbol of dedication. His
-            story is not just a historical account, but a living testament to
-            the power of belief. His canonization has inspired people across
-            generations to hold fast to their faith, no matter the challenges
-            they face.
+            Saint Devasahayam's extraordinary journey of faith, courage, and
+            martyrdom has made him an eternal symbol of dedication. His story is
+            not just a historical account, but a living testament to the power
+            of belief. His canonization has inspired people across generations
+            to hold fast to their faith, no matter the challenges they face.
           </p>
           <Button className="mt-6">Learn More</Button>
         </div>
