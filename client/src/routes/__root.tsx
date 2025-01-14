@@ -19,7 +19,6 @@ const LoadingScreen = ({ progress }: { progress: number }) => (
     }}
   >
     <img src="/logo.png" alt="Logo" style={{ width: "100px" }} />
-    <p>{progress}%</p>
   </div>
 );
 
