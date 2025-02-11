@@ -39,8 +39,13 @@ function RouteComponent() {
     {
       name: "Rev.Fr.A.Michael George Bright",
       from: "19.08.2020",
-      till: "Present",
+      till: "",
     },
+    {
+      name : "Rev.Fr. S. Leon Henson",
+      from : "",
+      till : ""
+    }
   ];
 
   const assistantFathers = [
