@@ -82,9 +82,7 @@ export default function Hero() {
 
       <div className="flex flex-col md:flex-row items-center h-full gap-16 md:gap-0 md:mx-[10%] pt-[20%] md:py-0 md:w-auto w-full z-20">
         <div className="w-[90%] md:w-full mt-28 md:mt-0 z-20">
-          <h1 className="text-5xl md:text-7xl text-white uppercase font-bold">
-            Basilica of
-          </h1>
+          <h1 className="text-5xl md:text-7xl text-white uppercase font-bold"></h1>
           <h2 className="text-3xl md:text-6xl text-white min-h-[2em]">
             <ReactTyped
               strings={["Our Lady of Sorrow", "Martyr St.Devasahayam"]}
