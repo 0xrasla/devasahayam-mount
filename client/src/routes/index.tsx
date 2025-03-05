@@ -33,7 +33,7 @@ function HomeComponent() {
             {Array.from({ length: 16 }, (_, i) => (
               <img
                 key={i}
-                src={`/notice/${i}.png`}
+                src={`/notice/${i}.webp`}
                 alt={`Page ${i}`}
                 className="w-full max-w-4xl"
               />
