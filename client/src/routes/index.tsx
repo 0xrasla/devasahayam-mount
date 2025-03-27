@@ -19,7 +19,7 @@ export const Route = createFileRoute("/")({
 });
 
 function HomeComponent() {
-  const [modalOpen, setModalOpen] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <div className="overflow-x-hidden">
